@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --color-rose: #d63772;
+  --color-rosedark: #ae295a;
+  --color-babypink: #ffc4da;
+  --color-babypinkdark: #f38eb3;
+  --color-cyan: #69d2c0;
+  --color-cyandark: #57aa9d;
+  --color-purple: #bd9ca8;
+  --color-purpledark: #8d6d76;
+  --color-black: #464646;
+  --color-blackdark: #2a2a2a;
+  --color-nude: #dbd0c1;
+  --color-cream: #fffaf2;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-in-out forwards;
+}

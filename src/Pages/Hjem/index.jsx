@@ -13,7 +13,7 @@ export default function Hjem() {
   if (loading) return <Loader text="Laster inn siden..." />;
 
   return (
-    <div className="max-w-7xl mx-auto p-8">
+    <div className="max-w-7xl mx-auto p-4">
       <HeroCarousel />
       <h1 className="text-3xl font-bold text-gray-800 mb-4">Velkommen 🌸</h1>
       <p className="text-gray-700">

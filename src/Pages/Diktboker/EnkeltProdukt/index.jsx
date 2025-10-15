@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { client, urlFor } from "../../../sanityClient";
+import Loader from "../../../Components/Loader/loader";
 
 export default function EnkeltProdukt() {
   const { slug } = useParams();
@@ -9,25 +10,22 @@ export default function EnkeltProdukt() {
   useEffect(() => {
     const fetchBook = async () => {
       const query = `*[_type == "book" && slug.current == $slug][0]{
-        title,
-        longDescription,
-        year,
-        price,
-        "cover": cover.asset->url,
-        "gallery": gallery[].asset->url
-      }`;
+      title,
+      longDescription,
+      year,
+      price,
+      "cover": cover.asset->url,
+      "gallery": gallery[].asset->url
+    }`;
       const data = await client.fetch(query, { slug });
-      setBook(data);
+
+      // optional fade delay (looks smoother)
+      setTimeout(() => setBook(data), 300);
     };
     fetchBook();
   }, [slug]);
 
-  if (!book)
-    return (
-      <div className="text-center p-8">
-        <p>Laster inn boken...</p>
-      </div>
-    );
+  if (!book) return <Loader text="Laster inn bok..." />;
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-10">

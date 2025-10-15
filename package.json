@@ -13,10 +13,13 @@
     "@sanity/client": "^7.12.0",
     "@sanity/image-url": "^1.2.0",
     "@tailwindcss/vite": "^4.1.14",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
     "lucide-react": "^0.545.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.4",
+    "swiper": "^12.0.2",
     "tailwindcss": "^4.1.14"
   },
   "devDependencies": {

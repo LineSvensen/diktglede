@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function HeroSlide3() {
   return (
-    <div className="bg-cream flex flex-col justify-center items-center text-center min-h-[70vh] px-6">
+    <div className="bg-cream flex flex-col justify-center items-center text-center h-full px-6">
       <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
         Roser langs veien 🌹
       </h2>

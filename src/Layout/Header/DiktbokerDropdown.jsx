@@ -1,10 +1,18 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { client } from "../../sanityClient";
 
-export default function DiktbokerDropdown({ dropdownRef, dropdownOpen, setDropdownOpen }) {
+export default function DiktbokerDropdown({
+  dropdownRef,
+  dropdownOpen,
+  setDropdownOpen,
+}) {
   const [books, setBooks] = useState([]);
+  const location = useLocation();
+
+  // 👇 detect if current route starts with /diktboker
+  const isActive = location.pathname.startsWith("/diktboker");
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -20,14 +28,18 @@ export default function DiktbokerDropdown({ dropdownRef, dropdownOpen, setDropdo
   }, []);
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div className="relative poppins-regular" ref={dropdownRef}>
       <button
         onClick={() => setDropdownOpen((prev) => !prev)}
-        className="flex items-center text-gray-700 hover:text-gray-900 transition-colors"
+        className={`flex items-center transition-colors cursor-pointer ${
+          isActive
+            ? "text-[#d63772] font-semibold"
+            : "text-[#d63772] hover:text-[#367268] "
+        }`}
       >
         Diktbøker
         <ChevronDown
-          className={`ml-1 h-4 w-4 transition-transform duration-200 ${
+          className={`ml-1 h-4 w-4 transition-transform duration-200  ${
             dropdownOpen ? "rotate-180" : ""
           }`}
         />
@@ -38,7 +50,7 @@ export default function DiktbokerDropdown({ dropdownRef, dropdownOpen, setDropdo
           <Link
             to="/diktboker"
             onClick={() => setDropdownOpen(false)}
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+            className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#69d2c0]/50 transition-colors"
           >
             Vis alle
           </Link>
@@ -48,7 +60,7 @@ export default function DiktbokerDropdown({ dropdownRef, dropdownOpen, setDropdo
               key={book.slug}
               to={`/diktboker/${book.slug}`}
               onClick={() => setDropdownOpen(false)}
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#69d2c0]/50 transition-colors"
             >
               {book.title}
             </Link>

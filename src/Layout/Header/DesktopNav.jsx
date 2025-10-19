@@ -9,12 +9,12 @@ export default function DesktopNav({
   const linkStyle = ({ isActive }) =>
     `transition-colors ${
       isActive
-        ? "text-black font-semibold"
-        : "text-gray-700 hover:text-gray-900"
+        ? "text-[#d63772] font-semibold"
+        : "text-[#d63772] hover:text-[#367268] "
     }`;
 
   return (
-    <nav className="hidden md:flex items-center space-x-6">
+    <nav className="hidden md:flex items-center space-x-6 poppins-regular">
       <NavLink to="/" end className={linkStyle}>
         Hjem
       </NavLink>

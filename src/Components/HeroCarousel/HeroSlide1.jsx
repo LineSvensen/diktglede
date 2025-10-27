@@ -8,7 +8,7 @@ export default function HeroSlide1() {
   return (
     <div
       className="relative flex flex-col lg:flex-row items-center justify-center 
-      h-full pt-8 pb-4
+      h-full w-full pt-8 pb-4
       bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${bgHero})` }}
     >

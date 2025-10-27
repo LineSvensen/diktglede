@@ -40,10 +40,10 @@ export default function MobileMenu({
         </button>
       </div>
 
-      <nav className="flex flex-col p-4 space-y-3 poppins-semibold text-[#d63772] ">
+      <nav className="flex flex-col p-4 space-y-3 poppins-regular text-[#d63772] ">
         <NavLink
           to="/"
-          className="hover:text-[#367268]"
+          className="hover:text-[#367268] font-semibold"
           end
           onClick={() => setMobileMenuOpen(false)}
         >

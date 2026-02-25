@@ -70,7 +70,7 @@ export default function HeroCarousel() {
           absolute top-1/2 left-4 -translate-y-1/2
           bg-white/80 hover:bg-white text-[#d63772]
           rounded-full p-2 shadow-md transition z-20
-          disabled:opacity-40 disabled:cursor-not-allowed
+          disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer
         "
         aria-label="Forrige slide"
       >
@@ -84,7 +84,7 @@ export default function HeroCarousel() {
           absolute top-1/2 right-4 -translate-y-1/2
           bg-white/80 hover:bg-white text-[#d63772]
           rounded-full p-2 shadow-md transition z-20
-          disabled:opacity-40 disabled:cursor-not-allowed
+          disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer
         "
         aria-label="Neste slide"
       >

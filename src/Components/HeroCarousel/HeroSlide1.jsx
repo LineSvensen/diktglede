@@ -15,36 +15,22 @@ export default function HeroSlide1() {
       style={{ backgroundImage: `url(${bgHero})` }}
     >
       {/* Desktop image behind, pinned bottom-right */}
-      <img
-        src={maritina}
-        alt="Marit"
-        className="
-          hidden lg:block
-          absolute bottom-30 xl:bottom-25 right-0 pl-4
-          w-[520px] lg:w-[620px] xl:w-[720px]
-          max-w-none
-          object-contain
-          z-0
-          pointer-events-none select-none
-          translate-y-12
-        "
-      />
 
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-10">
         <div
-          className="flex flex-col min-[789px]:max-[1023px]:flex-row items-center min-[761px]:items-center
-  min-[1024px]:items-start  justify-center lg:min-h-[520px] lg:w-1/2 lg:pt-40"
+          className="flex flex-col min-[768px]:max-[1024px]:flex-row items-center min-[761px]:items-center
+  min-[1024px]:items-start  justify-start lg:min-h-[520px] lg:max-w-120 lg:pt-40"
         >
           <div
-            className="w-full text-center lg:text-left space-y-4 lg:pl-8        min-[761px]:w-84
+            className=" text-center  md:text-left space-y-4 md:pl-10  min-[455px]:w-70 min-[641px]:w-80    min-[761px]:w-84
   min-[1149px]:w-full"
           >
             <h2 className="text-3xl homemade-apple-regular md:text-5xl  font-bold text-gray-800 leading-tight">
               Velkommen til Diktglede
             </h2>
 
-            <p className="text-gray-700 manrope-write md:pt-4 text-base md:text-lg max-w-md mx-auto lg:mx-0">
+            <p className="text-gray-700 manrope-write md:pt-4 text-base lg:text-lg md:pr-12 lg:pr-0 max-w-sm mx-auto lg:mx-0">
               Utforsk Marits diktbøker – fylt med varme, kjærlighet og
               inspirasjon.
             </p>
@@ -55,16 +41,30 @@ export default function HeroSlide1() {
             >
               Se diktbøkene
             </Link>
+            <img
+              src={maritina}
+              alt="Marit"
+              className="
+          hidden md:block
+          absolute  bottom-[0px]   right-0 pl-4
+           w-[420px] min-[857px]:w-[520px] lg:w-[620px] xl:w-[720px]
+          max-w-none0
+          object-cover
+          z-0
+          pointer-events-none select-none
+          translate-y-20
+        "
+            />
           </div>
         </div>
       </div>
 
       {/* Mobile image */}
-      <div className="relative z-10 flex w-full  justify-center lg:hidden">
+      <div className="relative z-10 flex w-full  justify-center md:hidden">
         <img
           src={heroMobile}
           alt="Diktglede hero"
-          className="px-4 pt-4 max-h-[800px] sm:max-h-[600px] object-contain"
+          className="px-8 pt-4 max-h-[290px] md:max-h-[300px] object-contain"
         />
       </div>
     </section>

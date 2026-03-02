@@ -40,7 +40,7 @@ export default function HeroCarousel() {
     <section
       className="
         relative w-full overflow-hidden rounded-lg
-        h-[85vh] md:h-[80vh]  mt-0 sm:mt-6
+        h-[85vh] md:h-[60vh] lg:h-[80vh]  mt-0 lg:mt-4
       "
     >
       {/* Viewport */}

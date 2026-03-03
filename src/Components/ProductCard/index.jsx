@@ -11,7 +11,7 @@ export default function ProductCard({ book }) {
   const { title, slug, shortDescription, cover, price, available, year } = book;
 
   return (
-    <div className="group relative bg-white rounded-2xl overflow-hidden shadow-lg border-2  hover:border-rose/20 cursor-pointer hover:bg-babypink border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col">
+    <div className="group relative bg-white rounded-md overflow-hidden shadow-lg border-1  hover:border-rose/20 cursor-pointer hover:bg-babypink border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col">
       {/* Badge for unavailable books */}
       {!available && (
         <span className="absolute top-3 left-3 bg-gray-800/80 text-white text-xs px-2 py-1 rounded-md z-10">

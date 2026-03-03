@@ -7,6 +7,8 @@ import HeroSlide1 from "./HeroSlide1";
 import HeroSlide2 from "./HeroSlide2";
 import HeroSlide3 from "./HeroSlide3";
 
+import rose from "../../assets/rose-d.png";
+
 export default function HeroCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 8000, stopOnInteraction: false }),
@@ -39,10 +41,11 @@ export default function HeroCarousel() {
   return (
     <section
       className="
-        relative w-full overflow-hidden rounded-lg
-        h-[85vh] md:h-[60vh] lg:h-[80vh]  mt-0 lg:mt-4
+        relative w-full overflow-hidden rounded-md
+        h-[85vh] sm:h-[60vh] md:h-[60vh] lg:h-[80vh]  mt-0 lg:mt-4
       "
     >
+      
       {/* Viewport */}
       <div ref={emblaRef} className="overflow-hidden h-full w-full">
         <div className="flex h-full w-full">

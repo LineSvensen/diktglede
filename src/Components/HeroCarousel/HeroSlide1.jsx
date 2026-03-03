@@ -19,18 +19,18 @@ export default function HeroSlide1() {
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-10">
         <div
-          className="flex flex-col min-[768px]:max-[1024px]:flex-row items-center min-[761px]:items-center
-  min-[1024px]:items-start  justify-start lg:min-h-[520px] lg:max-w-120 lg:pt-40"
+          className="flex flex-col min-[640px]:max-[1024px]:flex-row items-center min-[760px]:items-center
+  min-[1024px]:items-start  justify-start lg:min-h-[520px] lg:max-w-120 pt-0 sm:pt-8 md:pt-0  lg:pt-30 xl:pt-40"
         >
           <div
-            className=" text-center  md:text-left space-y-4 md:pl-10  min-[455px]:w-70 min-[641px]:w-80    min-[761px]:w-84
+            className=" text-center  sm:text-left space-y-4 sm:pl-10  min-[455px]:w-70 min-[640px]:w-60    min-[767px]:w-84
   min-[1149px]:w-full"
           >
             <h2 className="text-3xl homemade-apple-regular md:text-5xl  font-bold text-gray-800 leading-tight">
               Velkommen til Diktglede
             </h2>
 
-            <p className="text-gray-700 manrope-write md:pt-4 text-base lg:text-lg md:pr-12 lg:pr-0 max-w-sm mx-auto lg:mx-0">
+            <p className="text-gray-700 manrope-write pt-4 lg:pt-8  text-base lg:text-lg md:pr-12 lg:pr-0 max-w-sm mx-auto lg:mx-0">
               Utforsk Marits diktbøker – fylt med varme, kjærlighet og
               inspirasjon.
             </p>
@@ -45,14 +45,14 @@ export default function HeroSlide1() {
               src={maritina}
               alt="Marit"
               className="
-          hidden md:block
-          absolute  bottom-[0px]   right-0 pl-4
-           w-[420px] min-[857px]:w-[520px] lg:w-[620px] xl:w-[720px]
+          hidden sm:block
+          absolute bottom-[0px]   right-0 pl-4
+           w-[350px] min-[640px]:w-[350px] min-[700px]:w-[410px] min-[857px]:w-[500px] lg:w-[630px] xl:w-[720px]
           max-w-none0
           object-cover
           z-0
           pointer-events-none select-none
-          translate-y-20
+          translate-y-[100px] sm:translate-y-16 md:translate-y-10 lg:translate-y-20
         "
             />
           </div>
@@ -60,11 +60,11 @@ export default function HeroSlide1() {
       </div>
 
       {/* Mobile image */}
-      <div className="relative z-10 flex w-full  justify-center md:hidden">
+      <div className="relative z-10 flex w-full  justify-center sm:hidden">
         <img
           src={heroMobile}
           alt="Diktglede hero"
-          className="px-8 pt-4 max-h-[290px] md:max-h-[300px] object-contain"
+          className="px-8 pt-0 pb-4 max-h-[300px]   sm:max-h-[300px] object-cover"
         />
       </div>
     </section>

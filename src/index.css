@@ -3,7 +3,7 @@
 @theme {
   --color-rose: #d63772;
   --color-rosedark: #ae295a;
-  --color-babypink: #FFEBF4;
+  --color-babypink: #ffebf4;
   --color-babypinkdark: #f38eb3;
   --color-cyan: #69d2c0;
   --color-cyandark: #57aa9d;
@@ -13,6 +13,11 @@
   --color-blackdark: #2a2a2a;
   --color-nude: #dbd0c1;
   --color-cream: #fffaf2;
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
 
 .homemade-apple-regular {

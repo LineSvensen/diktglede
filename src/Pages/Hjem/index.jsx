@@ -35,18 +35,34 @@ export default function Hjem() {
   if (loading) return <Loader text="Laster inn siden..." />;
 
   return (
-    <div className="relative max-w-7xl mx-auto p-4">
-      <img
-        src={rose}
-        alt="rose"
-        className="absolute top-4  -right-10 z-20 w-[110px] lg:w-[130px] object-contain "
-      />
-      <img
-        src={rose}
-        alt="rose"
-        className="absolute  top-134 -left-8 sm:-left-10  sm:top-90 lg:top-124 z-20 w-[110px] sm:w-[100px] lg:w-[130px] object-contain"
-      />
-      <HeroCarousel />
+    <div className="max-w-7xl mx-auto p-4">
+      <div className="relative">
+        <img
+          src={rose}
+          alt="rose"
+          className="
+      pointer-events-none
+      absolute top-0 right-0 z-20
+      w-[50px] sm:w-[95px] lg:w-[130px]
+      -translate-y-3 translate-x-3
+      object-contain
+    "
+        />
+
+        {/* Bottom-left corner */}
+        <img
+          src={rose}
+          alt="rose"
+          className="
+      pointer-events-none
+      absolute bottom-0 left-0 z-20
+      w-[50px] sm:w-[70px] lg:w-[80px] xl:w-[110px]
+      translate-y-3 -translate-x-3
+      object-contain
+    "
+        />
+        <HeroCarousel />
+      </div>
 
       {/* Section for featured diktbøker */}
       <section className="mt-10">

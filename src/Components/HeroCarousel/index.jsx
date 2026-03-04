@@ -42,10 +42,11 @@ export default function HeroCarousel() {
     <section
       className="
         relative w-full overflow-hidden rounded-md
-        h-[85vh] sm:h-[60vh] md:h-[60vh] lg:h-[80vh]  mt-0 lg:mt-4
+    h-[85svh] min-h-[420px]
+    sm:h-[60vh] md:h-[60vh] lg:h-[80vh]
+    mt-0 lg:mt-4
       "
     >
-      
       {/* Viewport */}
       <div ref={emblaRef} className="overflow-hidden h-full w-full">
         <div className="flex h-full w-full">

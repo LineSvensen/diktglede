@@ -23,8 +23,9 @@ export default function ProductCard({ book }) {
       <div className="relative w-full overflow-hidden">
         {cover ? (
           <img
-            src={urlFor(cover).width(600).url()}
+            src={urlFor(cover).width(600).auto("format").url()}
             alt={cover.alt || title}
+            loading="lazy"
             className="h-72 w-full object-cover transform group-hover:scale-105 transition duration-500"
           />
         ) : (

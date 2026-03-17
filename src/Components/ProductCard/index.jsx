@@ -11,15 +11,16 @@ export default function ProductCard({ book }) {
   const { title, slug, shortDescription, cover, price, available, year } = book;
 
   return (
-    <div className="group relative bg-white rounded-md overflow-hidden shadow-lg border-1  hover:border-rose/20 cursor-pointer hover:bg-babypink border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col">
-      {/* Badge for unavailable books */}
+    <Link
+      to={`/diktboker/${slug}`}
+      className="group relative block bg-white rounded-md overflow-hidden shadow-lg border hover:border-rose/20 hover:bg-babypink border-gray-200 hover:shadow-xl transition-all duration-300"
+    >
       {!available && (
         <span className="absolute top-3 left-3 bg-gray-800/80 text-white text-xs px-2 py-1 rounded-md z-10">
           Kommer snart
         </span>
       )}
 
-      {/* Cover image */}
       <div className="relative w-full overflow-hidden">
         {cover ? (
           <img
@@ -34,11 +35,9 @@ export default function ProductCard({ book }) {
           </div>
         )}
 
-        {/* Soft gradient overlay on hover */}
-        <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-white/70 via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
       </div>
 
-      {/* Content */}
       <div className="flex flex-col flex-grow p-5">
         <h2 className="text-lg font-semibold text-[#d63772] mb-1 leading-snug group-hover:text-[#ae295a] transition">
           {title}
@@ -56,7 +55,6 @@ export default function ProductCard({ book }) {
           </p>
         )}
 
-        {/* Footer */}
         <div className="mt-5 flex justify-between items-center">
           {price ? (
             <span className="text-[#d63772] font-medium">{price} kr</span>
@@ -64,14 +62,11 @@ export default function ProductCard({ book }) {
             <span className="text-gray-400 text-sm">Utsolgt</span>
           )}
 
-          <Link
-            to={`/diktboker/${slug}`}
-            className="text-sm text-white bg-[#d63772] hover:bg-[#ae295a] py-2 px-5 rounded-full transition-all duration-300 shadow-sm hover:shadow-md"
-          >
+          <span className="text-sm text-white bg-[#d63772] hover:bg-[#ae295a] py-2 px-5 rounded-full transition-all duration-300 shadow-sm hover:shadow-md">
             Se mer
-          </Link>
+          </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

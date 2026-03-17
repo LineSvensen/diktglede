@@ -25,11 +25,11 @@ export default function Diktboker() {
     <div className="max-w-6xl mx-auto p-6">
       <h1 className="text-3xl font-semibold mb-6">Diktbøker</h1>
 
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 cursor-pointer">
         {books.map((book) => (
           <Link
             key={book._id}
-            to={`/diktboker/${book.slug.current}`} 
+            to={`/diktboker/${book.slug.current}`}
             className="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden block"
           >
             {book.coverUrl && (
@@ -41,7 +41,9 @@ export default function Diktboker() {
             )}
             <div className="p-4">
               <h2 className="text-xl font-bold mb-2">{book.title}</h2>
-              <p className="text-gray-600 text-sm mb-3">{book.shortDescription}</p>
+              <p className="text-gray-600 text-sm mb-3">
+                {book.shortDescription}
+              </p>
               <p className="text-gray-800 font-medium">
                 {book.price ? `${book.price} kr` : ""}
               </p>

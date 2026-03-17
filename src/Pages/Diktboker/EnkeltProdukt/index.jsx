@@ -1,74 +1,203 @@
 import { useParams, Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { client, urlFor } from "../../../sanityClient";
+import { useEffect, useMemo, useState } from "react";
+import { client } from "../../../sanityClient";
 import Loader from "../../../Components/Loader/loader";
 
 export default function EnkeltProdukt() {
   const { slug } = useParams();
   const [book, setBook] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(0);
 
   useEffect(() => {
     const fetchBook = async () => {
       const query = `*[_type == "book" && slug.current == $slug][0]{
-      title,
-      longDescription,
-      year,
-      price,
-      "cover": cover.asset->url,
-      "gallery": gallery[].asset->url
-    }`;
-      const data = await client.fetch(query, { slug });
+        title,
+        longDescription,
+        shortDescription,
+        year,
+        price,
+        "cover": cover.asset->url,
+        "gallery": gallery[].asset->url
+      }`;
 
-      // optional fade delay (looks smoother)
-      setTimeout(() => setBook(data), 300);
+      try {
+        const data = await client.fetch(query, { slug });
+        setTimeout(() => setBook(data), 250);
+      } catch (error) {
+        console.error("Kunne ikke hente bok:", error);
+        setBook(null);
+      }
     };
+
     fetchBook();
+  }, [slug]);
+
+  const allImages = useMemo(() => {
+    if (!book) return [];
+    const images = [book.cover, ...(book.gallery || [])].filter(Boolean);
+    return [...new Set(images)];
+  }, [book]);
+
+  useEffect(() => {
+    setSelectedImage(0);
   }, [slug]);
 
   if (!book) return <Loader text="Laster inn bok..." />;
 
+  const activeImage = allImages[selectedImage] || book.cover;
+
   return (
-    <div className="max-w-4xl mx-auto px-6 py-10">
-      <Link
-        to="/diktboker"
-        className="text-blue-600 hover:underline mb-4 inline-block"
-      >
-        ← Tilbake til oversikt
-      </Link>
+    <div className="min-h-screen bg-gradient-to-b from-[#ffdae6] via-white to-[#ffffff] text-zinc-900">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors mb-8"
+        >
+          <span className="text-base">←</span>
+          Tilbake til forsiden
+        </Link>
 
-      <h1 className="text-3xl font-bold mb-3">{book.title}</h1>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-7 items-start">
+          <section className="lg:col-span-6 xl:col-span-7">
+            <div className="lg:sticky lg:top-8">
+              <div className="rounded-lg backdrop-blur overflow-hidden">
+                <div className="h-[500px] flex items-center justify-center ">
+                  {activeImage ? (
+                    <img
+                      src={activeImage}
+                      alt={book.title}
+                      className="max-h-full max-w-full object-contain rounded-2xl"
+                    />
+                  ) : (
+                    <div className="text-zinc-400 text-sm">
+                      Ingen bilde tilgjengelig
+                    </div>
+                  )}
+                </div>
+              </div>
 
-      {book.year && (
-        <p className="text-gray-500 mb-2">Utgivelsesår: {book.year}</p>
-      )}
-      {book.price && (
-        <p className="text-lg font-medium mb-6">{book.price} kr</p>
-      )}
+              {allImages.length > 1 && (
+                <div className="mt-4 lg:mt-8">
+                  <div className="flex gap-3 justify-center overflow-x-auto pb-2 scrollbar-thin">
+                    {allImages.map((img, idx) => (
+                      <button
+                        key={`${img}-${idx}`}
+                        type="button"
+                        onClick={() => setSelectedImage(idx)}
+                        className={`group relative cursor-pointer h-24 w-20 sm:h-28 sm:w-24 shrink-0 overflow-hidden rounded-lg border transition-all duration-300 ${
+                          selectedImage === idx
+                            ? "border-pink-700"
+                            : "border-transparent hover:border-pink-700"
+                        }`}
+                        aria-label={`Vis bilde ${idx + 1}`}
+                      >
+                        <img
+                          src={img}
+                          alt={`Galleri ${idx + 1}`}
+                          className="h-full w-full object-cover"
+                        />
+                        <div
+                          className={`absolute inset-0 transition ${
+                            selectedImage === idx
+                              ? "bg-black/0"
+                              : "bg-black/20 group-hover:bg-black/0"
+                          }`}
+                        />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </section>
 
-      {book.cover && (
-        <img
-          src={urlFor(book.cover).width(700).url()}
-          alt={book.title}
-          className="w-full rounded-xl mb-6 shadow"
-        />
-      )}
+          <section className="lg:col-span-6 xl:col-span-5">
+            <div className="max-w-7xl">
+              <div className="inline-flex items-center rounded-full border border-[#e8ddd3] bg-[#fff8f2] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-[#9a6b4f] mb-5">
+                Diktbok
+              </div>
 
-      {book.gallery && book.gallery.length > 0 && (
-        <div className="flex gap-3 overflow-x-auto pb-4">
-          {book.gallery.map((img, idx) => (
-            <img
-              key={idx}
-              src={urlFor(img).width(250).url()}
-              alt={`Galleri ${idx + 1}`}
-              className="h-48 rounded-lg object-cover shadow"
-            />
-          ))}
+              <h1 className="text-4xl sm:text-5xl leading-tight font-semibold tracking-tight text-zinc-950">
+                {book.title}
+              </h1>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                {book.year && (
+                  <div className="rounded-2xl border border-zinc-200 bg-white px-4 py-3 shadow-sm">
+                    <p className="text-[11px] uppercase tracking-[0.18em] text-zinc-500">
+                      Utgivelsesår
+                    </p>
+                    <p className="mt-1 text-sm font-medium text-zinc-900">
+                      {book.year}
+                    </p>
+                  </div>
+                )}
+
+                {book.price && (
+                  <div className="rounded-2xl border border-zinc-200 bg-white px-4 py-3 shadow-sm">
+                    <p className="text-[11px] uppercase tracking-[0.18em] text-zinc-500">
+                      Pris
+                    </p>
+                    <p className="mt-1 text-sm font-medium text-zinc-900">
+                      {book.price} kr
+                    </p>
+                  </div>
+                )}
+              </div>
+
+              <div className="mt-8 rounded-[2rem] border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
+                <p className="text-[16px] uppercase tracking-[0.2em] text-zinc-500 mb-4">
+                  Kort beskrivelse
+                </p>
+
+                <div className="prose prose-zinc max-w-none">
+                  <p className="text-[1.02rem] leading-8 text-zinc-700 whitespace-pre-line m-0">
+                    {book.shortDescription || "Beskrivelse kommer snart."}
+                  </p>
+                </div>
+              </div>
+              <div className="mt-8 rounded-[2rem] border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
+                <p className="text-[16px] uppercase tracking-[0.2em] text-zinc-500 mb-4">
+                  Boken snakker om
+                </p>
+
+                <div className="prose prose-zinc max-w-none">
+                  <p className="text-[1.02rem] leading-8 text-zinc-700 whitespace-pre-line m-0">
+                    (ikoner)
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="lg:col-span-12">
+            <div className="mt-2 rounded-[2rem] border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
+              <p className="text-[14px] uppercase tracking-[0.2em] text-zinc-500 mb-4">
+                Om boken
+              </p>
+
+              <div className="prose prose-zinc max-w-none">
+                <p className="text-[1.02rem] leading-8 text-zinc-700 whitespace-pre-line m-0">
+                  {book.longDescription || "Beskrivelse kommer snart."}
+                </p>
+              </div>
+            </div>
+          </section>
+          <section className="lg:col-span-12">
+            <div className="mt-2 rounded-[2rem] border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
+              <p className="text-[14px] uppercase tracking-[0.2em] text-zinc-500 mb-4">
+                Dikt fra boken
+              </p>
+
+              <div className="prose prose-zinc max-w-none">
+                <p className="text-[1.02rem] leading-8 text-zinc-700 whitespace-pre-line m-0">
+                  lalal
+                </p>
+              </div>
+            </div>
+          </section>
         </div>
-      )}
-
-      <p className="text-gray-700 leading-relaxed whitespace-pre-line mt-6">
-        {book.longDescription}
-      </p>
+      </div>
     </div>
   );
 }

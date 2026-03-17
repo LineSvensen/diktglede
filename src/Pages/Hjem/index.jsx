@@ -17,16 +17,17 @@ export default function Hjem() {
   useEffect(() => {
     const fetchBooks = async () => {
       const data = await client.fetch(`
-        *[_type == "book" && available == true] | order(year desc)[0...6] {
-          title,
-          "slug": slug.current,
-          shortDescription,
-          price,
-          year,
-          cover,
-          available
-        }
-      `);
+      *[_type == "book" && available == true] | order(year desc)[0...50] {
+        _id,
+        title,
+        "slug": slug.current,
+        shortDescription,
+        price,
+        year,
+        cover,
+        available
+      }
+    `);
       setBooks(data);
     };
     fetchBooks();
@@ -72,7 +73,7 @@ export default function Hjem() {
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 poppins-regular">
           {books.map((book) => (
-            <ProductCard key={book.slug} book={book} />
+            <ProductCard key={book._id} book={book} />
           ))}
         </div>
       </section>

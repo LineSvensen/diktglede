@@ -34,10 +34,40 @@ export default {
       description: 'Full beskrivelse som vises på boksiden.',
     },
     {
+      name: 'poem',
+      title: 'Dikt',
+      type: 'text',
+      rows: 12,
+      description: 'Dikt som vises under "Om boka" på produktsiden.',
+    },
+    {
       name: 'year',
       title: 'Utgivelsesår',
       type: 'number',
       validation: (Rule) => Rule.min(1900).max(new Date().getFullYear()),
+    },
+
+    {
+      name: 'occasions',
+      title: 'Passer til',
+      type: 'array',
+      of: [{type: 'string'}],
+      options: {
+        list: [
+          {title: 'Håp', value: 'hope'},
+          {title: 'Sorg', value: 'grief'},
+          {title: 'Død', value: 'death'},
+          {title: 'Baby', value: 'baby'},
+          {title: 'Forelskelse', value: 'love'},
+          {title: 'Å bli voksen', value: 'confirmation'},
+          {title: 'Takknemlighet', value: 'birthday'},
+          {title: 'Trøst', value: 'comfort'},
+          {title: 'Vennskap', value: 'friendship'},
+          {title: 'Motivasjon', value: 'motivation'},
+          {title: 'Kjæledyr', value: 'pets'},
+        ],
+        layout: 'grid',
+      },
     },
 
     {

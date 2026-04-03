@@ -46,28 +46,32 @@ export default {
       type: 'number',
       validation: (Rule) => Rule.min(1900).max(new Date().getFullYear()),
     },
-
     {
       name: 'occasions',
       title: 'Passer til',
       type: 'array',
-      of: [{type: 'string'}],
-      options: {
-        list: [
-          {title: 'Håp', value: 'hope'},
-          {title: 'Sorg', value: 'grief'},
-          {title: 'Død', value: 'death'},
-          {title: 'Baby', value: 'baby'},
-          {title: 'Forelskelse', value: 'love'},
-          {title: 'Å bli voksen', value: 'confirmation'},
-          {title: 'Takknemlighet', value: 'birthday'},
-          {title: 'Trøst', value: 'comfort'},
-          {title: 'Vennskap', value: 'friendship'},
-          {title: 'Motivasjon', value: 'motivation'},
-          {title: 'Kjæledyr', value: 'pets'},
-        ],
-        layout: 'grid',
-      },
+      of: [
+        {
+          type: 'string',
+          options: {
+            list: [
+              {title: 'Håp', value: 'hope'},
+              {title: 'Sorg', value: 'grief'},
+              {title: 'Død', value: 'death'},
+              {title: 'Baby', value: 'baby'},
+              {title: 'Forelskelse', value: 'love'},
+              {title: 'Å bli voksen', value: 'confirmation'},
+              {title: 'Takknemlighet', value: 'thankful'},
+              {title: 'Trøst', value: 'comfort'},
+              {title: 'Vennskap', value: 'friendship'},
+              {title: 'Motivasjon', value: 'motivation'},
+              {title: 'Kjæledyr', value: 'pets'},
+              {title: 'Å spre glede', value: 'spread'},
+            ],
+            layout: 'grid',
+          },
+        },
+      ],
     },
 
     {

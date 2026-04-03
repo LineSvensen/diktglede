@@ -7,34 +7,71 @@ import { TiChevronLeft } from "react-icons/ti";
 import { PiArrowCircleLeft } from "react-icons/pi";
 
 import { PiShootingStarBold } from "react-icons/pi";
-{/* <PiShootingStarBold /> håp */}
+{
+  /* <PiShootingStarBold /> håp */
+}
 import { FaRegSadTear } from "react-icons/fa";
-{/* <FaRegSadTear /> */}
+{
+  /* <FaRegSadTear /> */
+}
 import { TbCoffin } from "react-icons/tb";
-{/* <TbCoffin /> */}
+{
+  /* <TbCoffin /> */
+}
 import { LuBaby } from "react-icons/lu";
-{/* <LuBaby /> */}
+{
+  /* <LuBaby /> */
+}
 import { RiHeartsLine } from "react-icons/ri";
-{/* <RiHeartsLine /> */}
+{
+  /* <RiHeartsLine /> */
+}
 import { FaChild } from "react-icons/fa";
-{/* <FaChild /> */}
+{
+  /* <FaChild /> */
+}
 import { PiHandsPraying } from "react-icons/pi";
-{/* <PiHandsPraying /> */}
+{
+  /* <PiHandsPraying /> */
+}
 import { LuHandHeart } from "react-icons/lu";
-{/* <LuHandHeart /> */}
+{
+  /* <LuHandHeart /> */
+}
 import { LiaHandshake } from "react-icons/lia";
-{/* <LiaHandshake /> */}
+{
+  /* <LiaHandshake /> */
+}
 import { MdOutlineRocketLaunch } from "react-icons/md";
-{/* <MdOutlineRocketLaunch /> */} // motivation
+{
+  /* <MdOutlineRocketLaunch /> */
+} // motivation
 import { LuDog } from "react-icons/lu";
-{/* <LuDog /> */}
+{
+  /* <LuDog /> */
+}
 
-
+import { PiButterflyBold } from "react-icons/pi";
 
 export default function EnkeltProdukt() {
   const { slug } = useParams();
   const [book, setBook] = useState(null);
   const [selectedImage, setSelectedImage] = useState(0);
+
+  const occasionMap = {
+    hope: { label: "Håp", icon: PiShootingStarBold },
+    grief: { label: "Sorg", icon: FaRegSadTear },
+    death: { label: "Død", icon: TbCoffin },
+    baby: { label: "Baby", icon: LuBaby },
+    love: { label: "Forelskelse", icon: RiHeartsLine },
+    confirmation: { label: "Å bli voksen", icon: FaChild },
+    thankful: { label: "Takknemlighet", icon: PiHandsPraying },
+    comfort: { label: "Trøst", icon: LuHandHeart },
+    friendship: { label: "Vennskap", icon: LiaHandshake },
+    motivation: { label: "Motivasjon", icon: MdOutlineRocketLaunch },
+    pets: { label: "Kjæledyr", icon: LuDog },
+    spread: { label: "Å spre glede", icon: PiButterflyBold },
+  };
 
   useEffect(() => {
     const fetchBook = async () => {
@@ -44,6 +81,7 @@ export default function EnkeltProdukt() {
         poem,
         shortDescription,
         year,
+        occasions,
         price,
         "cover": cover.asset->url,
         "gallery": gallery[].asset->url
@@ -192,11 +230,29 @@ export default function EnkeltProdukt() {
                   Boken snakker om
                 </p>
 
-                <div className="prose prose-zinc max-w-none">
-                  <p className="text-[1.02rem] leading-8 text-zinc-700 whitespace-pre-line m-0">
-                    (ikoner)
+                {book.occasions?.length > 0 ? (
+                  <div className="flex flex-wrap gap-3">
+                    {book.occasions.map((item) => {
+                      const entry = occasionMap[item];
+                      if (!entry) return null;
+                      const Icon = entry.icon;
+
+                      return (
+                        <div
+                          key={item}
+                          className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm text-zinc-700"
+                        >
+                          <Icon className="text-[#d63772] text-lg" />
+                          <span>{entry.label}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <p className="text-[1rem] leading-7 text-zinc-600 m-0">
+                    ... kommer snart!
                   </p>
-                </div>
+                )}
               </div>
             </div>
           </section>

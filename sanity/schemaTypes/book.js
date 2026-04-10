@@ -20,6 +20,12 @@ export default {
       },
     },
     {
+      name: 'isBundle',
+      title: 'Dette er en bokpakke',
+      type: 'boolean',
+      initialValue: false,
+    },
+    {
       name: 'shortDescription',
       title: 'Kort beskrivelse',
       type: 'string',

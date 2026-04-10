@@ -76,16 +76,18 @@ export default function EnkeltProdukt() {
   useEffect(() => {
     const fetchBook = async () => {
       const query = `*[_type == "book" && slug.current == $slug][0]{
-        title,
-        longDescription,
-        poem,
-        shortDescription,
-        year,
-        occasions,
-        price,
-        "cover": cover.asset->url,
-        "gallery": gallery[].asset->url
-      }`;
+  title,
+  isBundle,
+  shortDescription,
+  longDescription,
+  poem,
+  year,
+  occasions,
+  price,
+  available,
+  "cover": cover.asset->url,
+  "gallery": gallery[].asset->url
+}`;
 
       try {
         const data = await client.fetch(query, { slug });
@@ -112,6 +114,7 @@ export default function EnkeltProdukt() {
   if (!book) return <Loader text="Laster inn bok..." />;
 
   const activeImage = allImages[selectedImage] || book.cover;
+  const isBundle = book?.isBundle;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#f7c2d1] via-white to-[#ffffff] text-zinc-900">
@@ -183,7 +186,7 @@ export default function EnkeltProdukt() {
           <section className="lg:col-span-6 xl:col-span-5">
             <div className="max-w-7xl">
               <div className="inline-flex items-center rounded-full border border-[#e8ddd3] bg-[#fff8f2] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-[#9a6b4f] mb-5">
-                Diktbok
+                {isBundle ? "Bokpakke" : "Diktbok"}
               </div>
 
               <h1 className="text-4xl sm:text-5xl leading-tight font-semibold tracking-tight text-zinc-950">
@@ -191,7 +194,7 @@ export default function EnkeltProdukt() {
               </h1>
 
               <div className="mt-6 flex flex-wrap gap-3">
-                {book.year && (
+                {!isBundle && book.year && (
                   <div className="rounded-2xl border border-zinc-200 bg-white px-4 py-3 shadow-sm">
                     <p className="text-[11px] uppercase tracking-[0.18em] text-zinc-500">
                       Utgivelsesår
@@ -227,7 +230,7 @@ export default function EnkeltProdukt() {
               </div>
               <div className="mt-8 rounded-[2rem] border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
                 <p className="text-[16px] uppercase tracking-[0.2em] text-zinc-500 mb-4">
-                  Boken snakker om
+                  Tema i diktene
                 </p>
 
                 {book.occasions?.length > 0 ? (
@@ -256,11 +259,15 @@ export default function EnkeltProdukt() {
               </div>
             </div>
           </section>
-          <div className="lg:col-span-12 grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
+          <div
+            className={`lg:col-span-12 grid grid-cols-1 ${
+              !isBundle ? "lg:grid-cols-2" : ""
+            } gap-6 w-full`}
+          >
             <section className="w-full">
-              <div className="rounded-[2rem] border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)] h-full">
+              <div className="rounded-[2rem] border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
                 <p className="text-[16px] uppercase tracking-[0.2em] text-zinc-500 mb-4">
-                  Om boken
+                  {isBundle ? "Om pakken og bøkene" : "Om boken"}
                 </p>
 
                 <div className="prose prose-zinc max-w-none">
@@ -271,19 +278,21 @@ export default function EnkeltProdukt() {
               </div>
             </section>
 
-            <section className="w-full text-center">
-              <div className="rounded-[2rem] border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)] h-full">
-                <p className="text-[16px] uppercase tracking-[0.2em] text-zinc-500 mb-8">
-                  Dikt fra boken
-                </p>
-
-                <div className="prose prose-zinc max-w-none">
-                  <p className="text-[1.02rem] leading-8 text-zinc-700 whitespace-pre-line m-0">
-                    {book.poem || "Dikt kommer snart."}
+            {!isBundle && (
+              <section className="w-full text-center">
+                <div className="rounded-[2rem] border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
+                  <p className="text-[16px] uppercase tracking-[0.2em] text-zinc-500 mb-8">
+                    Dikt fra boken
                   </p>
+
+                  <div className="prose prose-zinc max-w-none">
+                    <p className="text-[1.02rem] leading-8 text-zinc-700 whitespace-pre-line m-0">
+                      {book.poem || "Dikt kommer snart."}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </section>
+              </section>
+            )}
           </div>
         </div>
       </div>

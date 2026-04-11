@@ -14,6 +14,7 @@ export default function Diktboker() {
         shortDescription,
         year,
         price,
+        isBundle,
         "coverUrl": cover.asset->url
       }`);
       setBooks(data);

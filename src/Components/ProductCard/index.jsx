@@ -8,12 +8,22 @@ function urlFor(source) {
 }
 
 export default function ProductCard({ book }) {
-  const { title, slug, shortDescription, cover, price, available, year } = book;
+  console.log("title:", book.title, "isBundle:", book.isBundle);
+  const {
+    title,
+    slug,
+    shortDescription,
+    cover,
+    price,
+    available,
+    year,
+    isBundle,
+  } = book;
 
   return (
     <Link
       to={`/diktboker/${slug}`}
-      className="group relative block bg-white rounded-md overflow-hidden shadow-lg border hover:border-rose/20 hover:bg-babypink border-gray-200 hover:shadow-xl transition-all duration-300"
+      className="group relative flex flex-col h-full max-w-[320px] bg-white rounded-md overflow-hidden shadow-lg border hover:border-rose/20 hover:bg-babypink border-gray-200 hover:shadow-xl transition-all duration-300"
     >
       {!available && (
         <span className="absolute top-3 left-3 bg-gray-800/80 text-white text-xs px-2 py-1 rounded-md z-10">
@@ -27,7 +37,7 @@ export default function ProductCard({ book }) {
             src={urlFor(cover).width(600).auto("format").url()}
             alt={cover.alt || title}
             loading="lazy"
-            className="h-72 w-full object-cover transform group-hover:scale-105 transition duration-500"
+            className="h-72 w-full object-cover  transform group-hover:scale-105 transition duration-500"
           />
         ) : (
           <div className="h-72 w-full bg-gray-100 flex items-center justify-center text-gray-400 text-sm">
@@ -55,7 +65,13 @@ export default function ProductCard({ book }) {
           </p>
         )}
 
-        <div className="mt-5 flex justify-between items-center">
+        {isBundle && (
+          <span className="pt-3 md:pt-0  max-w-[236px] text-[#d63772]  text-sm  rounded-full ">
+            Her får du tak i <b>Dans På Roser</b>
+          </span>
+        )}
+
+        <div className="mt-auto pt-4 flex justify-between items-center">
           {price ? (
             <span className="text-[#d63772] font-medium">{price} kr</span>
           ) : (

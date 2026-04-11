@@ -150,7 +150,7 @@ export default function EnkeltProdukt() {
 
               {allImages.length > 1 && (
                 <div className="mt-4 lg:mt-8">
-                  <div className="flex gap-3 overflow-x-auto pb-2 px-1 justify-start sm:justify-center snap-x snap-mandatory">
+                  <div className="flex gap-3 overflow-x-auto pb-2 px-2 justify-start snap-x snap-mandatory">
                     {allImages.map((img, idx) => (
                       <button
                         key={`${img}-${idx}`}

@@ -24,6 +24,7 @@ export default function Hjem() {
         shortDescription,
         price,
         year,
+        isBundle,
         cover,
         available
       }
@@ -64,19 +65,20 @@ export default function Hjem() {
         />
         <HeroCarousel />
       </div>
-
-      {/* Section for featured diktbøker */}
-      <section className="mt-10">
-        <h2 className="text-2xl poppins-regular text-[#d63772] mb-6">
+      <div className="flex justify-center flex-col items-center">
+        <h2 className="text-xl sm:text-2xl poppins-regular text-[#d63772] mt-6 lg:mb-6 lg:mt-10">
           Alle diktbøkene
         </h2>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 poppins-regular">
-          {books.map((book) => (
-            <ProductCard key={book._id} book={book} />
-          ))}
-        </div>
-      </section>
+        {/* Section for featured diktbøker */}
+        <section className="mt-4">
+          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 poppins-regular ">
+            {books.map((book) => (
+              <ProductCard key={book._id} book={book} />
+            ))}
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

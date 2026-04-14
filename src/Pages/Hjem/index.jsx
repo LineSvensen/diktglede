@@ -4,6 +4,8 @@ import HeroCarousel from "../../Components/HeroCarousel";
 import ProductCard from "../../Components/ProductCard";
 import { client } from "../../sanityClient";
 import rose from "../../assets/rose-d.png";
+import roseTwo from "../../assets/rose-e.png";
+import roseThree from "../../assets/rose-g.png";
 
 export default function Hjem() {
   const [loading, setLoading] = useState(true);
@@ -40,26 +42,26 @@ export default function Hjem() {
     <div className="max-w-7xl mx-auto p-4">
       <div className="relative">
         <img
-          src={rose}
+          src={roseThree}
           alt="rose"
           className="
       pointer-events-none
       absolute top-0 right-0 z-20
-      w-[50px] sm:w-[95px] lg:w-[130px]
-      -translate-y-3 translate-x-3
+      w-[50px]  translate-x-3 sm:w-[140px] lg:w-[116px]
+      -translate-y-3 sm:translate-x-9 md:translate-x-8
       object-contain
     "
         />
 
         {/* Bottom-left corner */}
         <img
-          src={rose}
+          src={roseTwo}
           alt="rose"
           className="
       pointer-events-none
       absolute bottom-0 left-0 z-20
-      w-[50px] sm:w-[70px] lg:w-[80px] xl:w-[110px]
-      translate-y-3 -translate-x-3
+      w-[50px] sm:w-[70px] lg:w-[120px] xl:w-[140px]
+      translate-y-3 sm:translate-y-5 -translate-x-3  lg:-translate-x-8
       object-contain
     "
         />

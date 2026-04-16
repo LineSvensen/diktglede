@@ -86,7 +86,10 @@ export default function EnkeltProdukt() {
   price,
   available,
   "cover": cover.asset->url,
-  "gallery": gallery[].asset->url
+  "gallery": gallery[]{
+  "url": asset->url,
+  "alt": alt
+},
 }`;
 
       try {
@@ -103,7 +106,11 @@ export default function EnkeltProdukt() {
 
   const allImages = useMemo(() => {
     if (!book) return [];
-    const images = [book.cover, ...(book.gallery || [])].filter(Boolean);
+    const coverUrl = book.cover;
+    const galleryUrls = (book.gallery || [])
+      .map((img) => img?.url)
+      .filter(Boolean);
+    const images = [coverUrl, ...galleryUrls].filter(Boolean);
     return [...new Set(images)];
   }, [book]);
 
@@ -149,17 +156,17 @@ export default function EnkeltProdukt() {
               </div>
 
               {allImages.length > 1 && (
-                <div className="mt-4 lg:mt-8">
-                  <div className="flex gap-3 overflow-x-auto pb-2 px-2 justify-start snap-x snap-mandatory">
+                <div className="mt-4 lg:mt-6">
+                  <div className="flex gap-2 overflow-x-auto pb-2 justify-center flex-wrap">
                     {allImages.map((img, idx) => (
                       <button
                         key={`${img}-${idx}`}
                         type="button"
                         onClick={() => setSelectedImage(idx)}
-                        className={`group relative cursor-pointer h-24 w-20 sm:h-28 sm:w-24 shrink-0 overflow-hidden rounded-lg border transition-all duration-300 ${
+                        className={`relative cursor-pointer h-20 w-16 shrink-0 overflow-hidden rounded-lg border-2 transition-all duration-300 ${
                           selectedImage === idx
                             ? "border-pink-700"
-                            : "border-transparent hover:border-pink-700"
+                            : "border-transparent hover:border-pink-400"
                         }`}
                         aria-label={`Vis bilde ${idx + 1}`}
                       >
@@ -167,13 +174,6 @@ export default function EnkeltProdukt() {
                           src={img}
                           alt={`Galleri ${idx + 1}`}
                           className="h-full w-full object-cover"
-                        />
-                        <div
-                          className={`absolute inset-0 transition ${
-                            selectedImage === idx
-                              ? "bg-black/0"
-                              : "bg-black/20 group-hover:bg-black/0"
-                          }`}
                         />
                       </button>
                     ))}

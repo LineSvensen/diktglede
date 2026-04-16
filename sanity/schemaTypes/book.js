@@ -121,6 +121,26 @@ export default {
       validation: (Rule) => Rule.min(0),
     },
     {
+      name: 'reviews',
+      title: 'Kundeanmeldelser',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {name: 'author', title: 'Navn', type: 'string'},
+            {name: 'quote', title: 'Sitat', type: 'text', rows: 4},
+          ],
+          preview: {
+            select: {
+              title: 'author',
+              subtitle: 'quote',
+            },
+          },
+        },
+      ],
+    },
+    {
       name: 'available',
       title: 'Tilgjengelig for salg',
       type: 'boolean',

@@ -64,7 +64,7 @@ export default function HeroSlide1() {
         <img
           src={heroMobile}
           alt="Diktglede hero"
-          className="px-8 pt-0 pb-4 max-h-[300px]   sm:max-h-[300px] object-cover"
+          className="px-8 pt-0 pb-4 max-h-[280px]   sm:max-h-[300px] object-cover"
         />
       </div>
     </section>

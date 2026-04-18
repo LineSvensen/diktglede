@@ -86,6 +86,10 @@ export default function EnkeltProdukt() {
   price,
   available,
   "cover": cover.asset->url,
+  reviews[]{
+    author,
+    quote
+  },
   "gallery": gallery[]{
   "url": asset->url,
   "alt": alt
@@ -259,6 +263,7 @@ export default function EnkeltProdukt() {
               </div>
             </div>
           </section>
+
           <div
             className={`lg:col-span-12 grid grid-cols-1 ${
               !isBundle ? "lg:grid-cols-2" : ""
@@ -294,6 +299,31 @@ export default function EnkeltProdukt() {
               </section>
             )}
           </div>
+          {!isBundle && book.reviews?.length > 0 && (
+            <section className="lg:col-span-12">
+              <div className="rounded-[2rem] border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
+                <p className="text-[16px] uppercase tracking-[0.2em] text-zinc-500 mb-6">
+                  Kundeanmeldelser
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {book.reviews.map((review, index) => (
+                    <div
+                      key={`${review.author}-${index}`}
+                      className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm"
+                    >
+                      <p className="text-[1rem] leading-7 text-zinc-700 italic">
+                        “{review.quote}”
+                      </p>
+                      <p className="mt-4 text-sm font-medium text-[#d63772]">
+                        – {review.author}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
         </div>
       </div>
     </div>

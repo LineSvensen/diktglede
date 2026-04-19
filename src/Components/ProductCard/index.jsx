@@ -78,7 +78,7 @@ export default function ProductCard({ book }) {
             <span className="text-gray-400 text-sm">Utsolgt</span>
           )}
 
-          <span className="text-sm text-white bg-[#d63772] hover:bg-[#ae295a] py-2 px-5 rounded-full transition-all duration-300 shadow-sm hover:shadow-md">
+          <span className="text-sm text-white bg-[#d63772] hover:bg-[#ae295a] py-2 px-5 rounded-lg transition-all duration-300 shadow-sm hover:shadow-md">
             Se mer
           </span>
         </div>

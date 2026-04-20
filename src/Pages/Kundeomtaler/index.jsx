@@ -1,9 +1,7 @@
-
-
 export default function Kundeomtaler() {
   return (
     <div className="">
-      <h1 className="text-3xl font-bold text-gray-800 mb-4 text-center pt-4 ">
+      <h1 className="text-3xl text-rose font-bold  mb-4 text-center pt-4 ">
         Kundeomtaler
       </h1>
       <iframe

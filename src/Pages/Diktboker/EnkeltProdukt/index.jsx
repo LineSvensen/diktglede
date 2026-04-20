@@ -299,7 +299,7 @@ export default function EnkeltProdukt() {
               </section>
             )}
           </div>
-          {!isBundle && book.reviews?.length > 0 && (
+          {book.reviews?.length > 0 && (
             <section className="lg:col-span-12">
               <div className="rounded-[2rem] border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
                 <p className="text-[16px] uppercase tracking-[0.2em] text-zinc-500 mb-6">

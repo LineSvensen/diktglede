@@ -130,6 +130,15 @@ export default {
           fields: [
             {name: 'author', title: 'Navn', type: 'string'},
             {name: 'quote', title: 'Sitat', type: 'text', rows: 4},
+            {
+              name: 'date',
+              title: 'Dato',
+              type: 'date',
+              options: {
+                dateFormat: 'YYYY-MM-DD',
+                calendarTodayLabel: 'Today',
+              },
+            },
           ],
           preview: {
             select: {

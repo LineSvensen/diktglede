@@ -6,5 +6,14 @@ export default {
     {name: 'author', title: 'Navn', type: 'string'},
     {name: 'quote', title: 'Sitat', type: 'text', rows: 4},
     {name: 'visible', title: 'Vis på siden', type: 'boolean', initialValue: true},
+    {
+      name: 'date',
+      title: 'Dato',
+      type: 'date',
+      options: {
+        dateFormat: 'YYYY-MM-DD',
+        calendarTodayLabel: 'Today',
+      },
+    },
   ],
 }

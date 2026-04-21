@@ -178,7 +178,7 @@ const ReviewCarousel = ({
   return (
     <div className="relative w-full max-w-4xl mx-auto">
       {/* FAST HØYDE - lavere på mobil */}
-      <div className="relative overflow-hidden rounded-2xl bg-white shadow-xl h-[380px] sm:h-[400px] ">
+      <div className="relative overflow-hidden rounded-2xl bg-white border-1 border-gray-100 shadow-xl h-[380px] sm:h-[400px] ">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={currentIndex}
@@ -195,7 +195,7 @@ const ReviewCarousel = ({
           >
             {/* Anførselstegn - mindre på mobil */}
             <svg
-              className="mb-2 sm:mb-4 h-5 w-5 sm:h-7 sm:w-7 md:h-8 md:w-8 text-gray-300 flex-shrink-0"
+              className="mb-2 sm:mb-4 h-7 w-7 md:h-12 md:w-12 text-palepink flex-shrink-0"
               fill="currentColor"
               viewBox="0 0 24 24"
             >
@@ -205,7 +205,7 @@ const ReviewCarousel = ({
             {/* Sitat - dynamisk font-størrelse */}
             <div className="flex-1 flex items-center justify-center mb-3 sm:mb-4 overflow-y-auto">
               <p
-                className={`${fontSizeClass} leading-relaxed text-gray-700 text-center transition-all duration-300 px-4 sm:px-2`}
+                className={`${fontSizeClass} leading-relaxed text-gray-700 text-center transition-all duration-300 px-8 sm:px-2`}
               >
                 "{currentReview.quote}"
               </p>
@@ -232,18 +232,18 @@ const ReviewCarousel = ({
         {/* Navigasjonsknapper - mindre på mobil */}
         <button
           onClick={handlePrev}
-          className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-1 sm:p-1.5 md:p-2 shadow-lg transition hover:bg-white sm:md:left-4 z-10"
+          className="absolute border-1 border-gray-100 left-1  sm:left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-1 sm:p-1.5 md:p-2 shadow-md transition hover:bg-white sm:md:left-4 z-10"
           aria-label="Forrige anmeldelse"
         >
-          <ChevronLeft className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 cursor-pointer text-gray-600" />
+          <ChevronLeft className="w-5 h-5   cursor-pointer text-gray-600" />
         </button>
 
         <button
           onClick={handleNext}
-          className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-1 sm:p-1.5 md:p-2 shadow-lg transition hover:bg-white sm:md:right-4 z-10"
+          className="absolute border-1 border-gray-100 right-1 sm:right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-1 sm:p-1.5 md:p-2 shadow-md transition hover:bg-white sm:md:right-4 z-10"
           aria-label="Neste anmeldelse"
         >
-          <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 cursor-pointer text-gray-600" />
+          <ChevronRight className="w-5 h-5  cursor-pointer text-gray-600" />
         </button>
 
         {/* Auto-play kontroll - mindre på mobil */}
@@ -253,9 +253,9 @@ const ReviewCarousel = ({
           aria-label={isAutoPlaying ? "Pause" : "Spill"}
         >
           {isAutoPlaying ? (
-            <Pause className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 text-gray-600" />
+            <Pause className="h-4 w-4 sm:h-3 sm:w-3 md:h-4 md:w-4 text-gray-600" />
           ) : (
-            <Play className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 text-gray-600" />
+            <Play className="h-4 w-4 sm:h-3 sm:w-3 md:h-4 md:w-4 text-gray-600" />
           )}
         </button>
       </div>

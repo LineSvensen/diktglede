@@ -4,7 +4,7 @@ import koderaLogo from "../../assets/k-in-kodera.svg";
 
 export default function Footer() {
   return (
-    <footer className="bg-babypink text-gray-700 border-t border-pink-100 mt-16 poppins-regular">
+    <footer className="bg-babypink text-gray-700 border-t border-pink-100 mt-4 poppins-regular">
       <div className="max-w-7xl mx-auto px-6 py-12 grid gap-8 md:grid-cols-3">
         {/* --- Column 1: Logo + intro --- */}
         <div>
@@ -77,12 +77,8 @@ export default function Footer() {
       {/* --- Bottom bar --- */}
       <div className="flex justify-evenly items-center flex-col gap-4 border-t border-pink-100 mt-8 py-4 text-center text-xs text-gray-500">
         <p className="flex items-center gap-2 justify-center">
-
-            <img src={koderaLogo} alt="Kodera" className="h-6" />
-          
+          <img src={koderaLogo} alt="Kodera" className="h-6" />
           Denne nettsiden er utviklet med ❤️ av kvinner i Kodera
-          
-          
           <a
             href="https://kodera.no"
             className="text-[#d63772] hover:text-[#ae295a] transition"

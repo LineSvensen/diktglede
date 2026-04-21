@@ -4,16 +4,16 @@ import koderaLogo from "../../assets/k-in-kodera.svg";
 
 export default function Footer() {
   return (
-    <footer className="bg-babypink text-gray-700 border-t border-pink-100 mt-4 poppins-regular">
+    <footer className="bg-palepink text-gray-700 border-t border-pink-100 mt-4 poppins-regular">
       <div className="max-w-7xl mx-auto px-6 py-12 grid gap-8 md:grid-cols-3">
         {/* --- Column 1: Logo + intro --- */}
         <div>
           <h2 className="text-2xl font-semibold text-[#d63772] mb-3">
-            Dikt & Ord
+            Diktglede
           </h2>
           <p className="text-sm text-gray-600 leading-relaxed">
             Velkommen til min verden av dikt, ord og følelser. Her finner du
-            mine diktbøker, inspirasjon og kontaktinformasjon.
+            mine diktbøker, inspirasjon og kontaktinformasjon. - Marit
           </p>
         </div>
 
@@ -39,7 +39,7 @@ export default function Footer() {
                 to="/om-meg"
                 className="hover:text-[#ae295a] transition-colors"
               >
-                Om meg
+                Om Marit
               </Link>
             </li>
             <li>
@@ -47,7 +47,7 @@ export default function Footer() {
                 to="/kontakt"
                 className="hover:text-[#ae295a] transition-colors"
               >
-                Kontakt
+                Kontakt og bestill
               </Link>
             </li>
           </ul>
@@ -55,28 +55,30 @@ export default function Footer() {
 
         {/* --- Column 3: Contact / socials --- */}
         <div>
-          <h3 className="text-lg font-medium text-[#d63772] mb-3">Kontakt</h3>
+          <h3 className="text-lg font-medium text-[#d63772] mb-3">
+            Kontakt og bestilling
+          </h3>
           <ul className="space-y-2 text-sm">
             <li className="flex items-center space-x-2">
               <Mail className="w-4 h-4 text-[#d63772]" />
               <a
-                href="mailto:post@diktogord.no"
+                href="mailto:maritsvensen@gmail.com"
                 className="hover:text-[#ae295a] transition"
               >
-                post@diktogord.no
+                maritsvensen@gmail.com
               </a>
             </li>
             <li className="flex items-center space-x-2">
               <Phone className="w-4 h-4 text-[#d63772]" />
-              <span>+47 900 00 000</span>
+              <span>+47 96 69 16 67</span>
             </li>
           </ul>
         </div>
       </div>
 
       {/* --- Bottom bar --- */}
-      <div className="flex justify-evenly items-center flex-col gap-4 border-t border-pink-100 mt-8 py-4 text-center text-xs text-gray-500">
-        <p className="flex items-center gap-2 justify-center">
+      <div className="flex justify-evenly  items-center flex-col gap-4 border-t border-palepink mt-8 py-4 text-center text-xs text-gray-500">
+        <p className="flex flex-col sm:flex-row items-center gap-2 justify-center">
           <img src={koderaLogo} alt="Kodera" className="h-6" />
           Denne nettsiden er utviklet med ❤️ av kvinner i Kodera
           <a
@@ -87,8 +89,8 @@ export default function Footer() {
           </a>
         </p>
         <p>
-          © {new Date().getFullYear()} Marit TH Svensen – Alle rettigheter
-          forbeholdt
+          © {new Date().getFullYear()} Marit Theresie Myhre Hardeberg (Svensen)
+          – Alle rettigheter forbeholdt
         </p>
       </div>
     </footer>

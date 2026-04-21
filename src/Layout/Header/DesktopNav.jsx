@@ -19,7 +19,7 @@ export default function DesktopNav({
         Hjem
       </NavLink>
       <NavLink to="/om-meg" className={linkStyle}>
-        Om meg
+        Om Marit
       </NavLink>
 
       {/* Dropdown */}
@@ -30,7 +30,7 @@ export default function DesktopNav({
       />
 
       <NavLink to="/kontakt" className={linkStyle}>
-        Kontakt
+        Kontakt og bestill
       </NavLink>
       <NavLink to="/kundeomtaler" className={linkStyle}>
         Kundeomtaler

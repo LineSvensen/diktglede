@@ -16,7 +16,7 @@ export default function MobileMenu({
         `*[_type == "book"] | order(title asc) {
           title,
           "slug": slug.current
-        }`
+        }`,
       );
       setBooks(data);
     };
@@ -50,6 +50,34 @@ export default function MobileMenu({
           Hjem
         </NavLink>
 
+        <NavLink
+          to="/om-meg"
+          className="hover:text-[#367268] font-semibold"
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          Om Marit
+        </NavLink>
+        <NavLink
+          to="/kontakt"
+          className="hover:text-[#367268] font-semibold"
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          Kontakt og bestill
+        </NavLink>
+        <NavLink
+          to="/kundeomtaler"
+          className="hover:text-[#367268] font-semibold"
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          Kundeomtaler
+        </NavLink>
+        <NavLink
+          to="/presse"
+          className="hover:text-[#367268] font-semibold"
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          Presse
+        </NavLink>
         <div className="flex flex-col space-y-1">
           <span className="poppins-semibold  pb-2">Diktbøker</span>
           <Link
@@ -70,35 +98,6 @@ export default function MobileMenu({
             </Link>
           ))}
         </div>
-
-        <NavLink
-          to="/om-meg"
-          className="hover:text-[#367268] font-semibold"
-          onClick={() => setMobileMenuOpen(false)}
-        >
-          Om meg
-        </NavLink>
-        <NavLink
-          to="/kontakt"
-          className="hover:text-[#367268] font-semibold"
-          onClick={() => setMobileMenuOpen(false)}
-        >
-          Kontakt
-        </NavLink>
-        <NavLink
-          to="/kundeomtaler"
-          className="hover:text-[#367268] font-semibold"
-          onClick={() => setMobileMenuOpen(false)}
-        >
-          Kundeomtaler
-        </NavLink>
-        <NavLink
-          to="/presse"
-          className="hover:text-[#367268] font-semibold"
-          onClick={() => setMobileMenuOpen(false)}
-        >
-          Presse
-        </NavLink>
       </nav>
     </div>
   );

@@ -8,7 +8,7 @@ export default function Layout() {
   return (
     <div className="">
       <Header />
-      <main className="pt-16 ">
+      <main className="pt-16">
         {" "}
         {/* Add padding for fixed header */}
         <Outlet />

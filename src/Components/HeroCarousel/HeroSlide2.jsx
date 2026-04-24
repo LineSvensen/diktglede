@@ -14,7 +14,7 @@ export default function HeroSlide2() {
 
       {/* text content */}
       <div className="relative  lg:h-[300px]  z-10 px-4 sm:px-8 py-4 sm:p-8  lg:pl-8 lg:pr-8 rounded-xl flex flex-col  justify-center items-center lg:items-start text-center lg:text-left w-full lg:w-1/2 max-w-lg gap-3 lg:gap-5">
-        <h2 className="text-2xl flex flex-row justify-center items-center pb-3 md:text-4xl font-bold text-black font-poppins ">
+        <h2 className="text-2xl flex flex-row justify-center items-center pb-3 md:text-4xl font-extrabold text-rose poppins ">
           Skaff deg alle bøkene
         </h2>
         <p className="text-gray-700 text-sm sm:text-md md:text-lg leading-relaxed font-poppins">

@@ -26,18 +26,26 @@ export default function HeroSlide1() {
             className=" text-center  sm:text-left space-y-4 sm:pl-10  min-[455px]:w-70 min-[640px]:w-60    min-[768px]:w-84
   min-[1149px]:w-full"
           >
-            <h2 className="text-3xl homemade-apple-regular md:text-5xl  font-bold text-gray-800 leading-tight">
+            {/* Mobile image */}
+            <div className="relative z-10 flex w-full  justify-center sm:hidden">
+              <img
+                src={heroMobile}
+                alt="Diktglede hero"
+                className=" pt-0  max-h-[240px]   sm:max-h-[300px] object-cover"
+              />
+            </div>
+            <h2 className="text-2xl sm:text-3xl homemade-apple-regular md:text-5xl  font-bold text-gray-800 leading-tight">
               Velkommen til Diktglede
             </h2>
 
-            <p className="text-gray-700 manrope-write pt-4 lg:pt-8  text-base lg:text-lg md:pr-12 lg:pr-0 max-w-sm mx-auto lg:mx-0">
+            <p className="text-gray-700 manrope-write sm:pt-4 lg:pt-8  text-base lg:text-lg md:pr-12 lg:pr-0 max-w-sm mx-auto lg:mx-0">
               Utforsk Marits diktbøker – fylt med varme, kjærlighet og
               inspirasjon.
             </p>
 
             <Link
               to="/diktboker"
-              className="inline-block mt-4 px-6 py-3 bg-rose text-white rounded-lg font-semibold hover:bg-rosedark transition"
+              className="inline-block mt-2 sm:mt-4 px-6 py-3 bg-rose text-white rounded-lg font-semibold hover:bg-rosedark transition"
             >
               Se diktbøkene
             </Link>
@@ -57,15 +65,6 @@ export default function HeroSlide1() {
             />
           </div>
         </div>
-      </div>
-
-      {/* Mobile image */}
-      <div className="relative z-10 flex w-full  justify-center sm:hidden">
-        <img
-          src={heroMobile}
-          alt="Diktglede hero"
-          className="px-8 pt-0 pb-4 max-h-[240px]   sm:max-h-[300px] object-cover"
-        />
       </div>
     </section>
   );

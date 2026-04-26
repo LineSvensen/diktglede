@@ -12,15 +12,25 @@ export default function HeroSlide2() {
       {/* overlay */}
       <div className="absolute inset-0  bg-linear-to-b from-white/99  to-white/10 sm:bg-linear-to-r sm:from-white/99  sm:to-white/10"></div>
 
+      <div className="relative z-10 flex justify-center lg:justify-end items-center ">
+        <img
+          src={allBooksOne}
+          alt="Bøker og gavepakke"
+          className="w-[220px] sm:hidden object-contain drop-shadow-lg flex items-center justify-center  transition-transform duration-500"
+        />
+      </div>
+
       {/* text content */}
       <div className="relative  lg:h-[300px]  z-10 px-4 sm:px-8 py-4 sm:p-8  lg:pl-8 lg:pr-8 rounded-xl flex flex-col  justify-center items-center lg:items-start text-center lg:text-left w-full lg:w-1/2 max-w-lg gap-3 lg:gap-5">
-        <h2 className="text-2xl flex flex-row justify-center items-center pb-3 md:text-4xl font-extrabold text-rose poppins ">
-          Skaff deg alle bøkene
+        <h2 className="text-2xl flex flex-row justify-center items-center  md:text-5xl font-extrabold text-rose poppins ">
+          Bokpakken
         </h2>
-        <p className="text-gray-700 text-sm sm:text-md md:text-lg leading-relaxed font-poppins">
+        <h3 className="text-base flex flex-row justify-center items-center  md:text-3xl font-extrabold text-black sm:text-cyandark poppins ">
+          - Skaff deg alle bøkene !
+        </h3>
+        <p className="text-gray-700 text-base sm:text-md md:text-lg leading-relaxed font-poppins">
           Kjøp bokpakken som eksklusivt inkluderer den aller første diktboken{" "}
-          <em>“Dans på roser”</em> som det kun finnes et begrenset antall igjen
-          av
+          <em>“Dans på roser”</em> - kun i begrenset opplag
         </p>
         <Link
           to="/diktboker/pakke-med-alle-bokene"
@@ -35,7 +45,7 @@ export default function HeroSlide2() {
         <img
           src={allBooksOne}
           alt="Bøker og gavepakke"
-          className="w-[280px] sm:w-[360px] md:w-[300px] lg:w-[500px] object-contain drop-shadow-lg flex items-center justify-center  transition-transform duration-500"
+          className="hidden sm:block sm:w-[360px] md:w-[300px] lg:w-[500px] object-contain drop-shadow-lg flex items-center justify-center  transition-transform duration-500"
         />
       </div>
     </div>

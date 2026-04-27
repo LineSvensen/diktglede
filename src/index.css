@@ -149,6 +149,41 @@ body {
   font-style: normal;
 }
 
+/* .press-cover {
+  display: flex;
+  width: 100%;
+  max-height: 300px;
+  padding: 4px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.press-img {
+  display: flex;
+  max-width: 300px;
+  max-height: 200px;
+
+  padding: 4px;
+  border-radius: 10px;
+} */
+
+.masonry {
+  columns: 2;
+  column-gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .masonry {
+    columns: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry {
+    columns: 5;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

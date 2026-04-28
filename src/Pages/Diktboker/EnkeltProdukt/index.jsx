@@ -132,7 +132,7 @@ export default function EnkeltProdukt() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <Link
           to="/"
-          className="bg-white/40 py-2 px-4 rounded-full shadow inline-flex items-center gap-2 text-base  text-[#d63772] hover:text-pink-800 transition-colors mb-8 "
+          className="bg-white/40 py-2 px-4 rounded-lg shadow inline-flex items-center gap-2 text-base  text-[#d63772] hover:text-pink-800 transition-colors mb-8 "
         >
           <span className="text-2xl text-center">
             <PiArrowCircleLeft />
@@ -149,7 +149,7 @@ export default function EnkeltProdukt() {
                     <img
                       src={activeImage}
                       alt={book.title}
-                      className="max-h-full max-w-full object-contain rounded-2xl"
+                      className="max-h-full max-w-full object-contain rounded-lg"
                     />
                   ) : (
                     <div className="text-zinc-400 text-sm">
@@ -189,39 +189,46 @@ export default function EnkeltProdukt() {
 
           <section className="lg:col-span-6 xl:col-span-5">
             <div className="max-w-7xl">
-              <div className="inline-flex items-center rounded-full border border-[#e8ddd3] bg-[#fff8f2] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-[#9a6b4f] mb-5">
+              {/* <div className="inline-flex items-center rounded-full border border-[#e8ddd3] bg-[#fff8f2] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-[#9a6b4f] mb-5">
                 {isBundle ? "Bokpakke" : "Diktbok"}
-              </div>
+              </div> */}
 
               <h1 className="text-4xl sm:text-5xl leading-tight font-semibold tracking-tight text-zinc-950">
                 {book.title}
               </h1>
 
-              <div className="mt-6 flex flex-wrap gap-3">
-                {!isBundle && book.year && (
-                  <div className="rounded-2xl border border-zinc-200 bg-white px-4 py-3 shadow-sm">
-                    <p className="text-[11px] uppercase tracking-[0.18em] text-zinc-500">
-                      Utgivelsesår
-                    </p>
-                    <p className="mt-1 text-sm font-medium text-zinc-900">
-                      {book.year}
-                    </p>
-                  </div>
-                )}
+              {!isBundle && book.year && (
+                <div className=" mt-4 inline-flex items-center rounded-full font-medium py-1.5 text-base  uppercase tracking-[0.18em] text-rose ">
+                  <p className=" ">Utgivelsesår: {book.year}</p>
+                </div>
+              )}
 
+              <div className="mt-7 flex  flex-wrap gap-3">
                 {book.price && (
-                  <div className="rounded-2xl border border-zinc-200 bg-white px-4 py-3 shadow-sm">
-                    <p className="text-[11px] uppercase tracking-[0.18em] text-zinc-500">
+                  <div className="flex flex-row text-center items-center gap-2 rounded-lg border  border-zinc-200 bg-white px-4 py-3 shadow-sm ">
+                    <p className="text-base uppercase tracking-[0.18em] text-zinc-500">
                       Pris
                     </p>
-                    <p className="mt-1 text-sm font-medium text-zinc-900">
+                    <p className=" text-lg font-medium text-black">
                       {book.price} kr
                     </p>
                   </div>
                 )}
+                {/* <a
+                  href="mailto:maritsvensen@gmail.com"
+                  className="hover:bg-rosedark bg-rose text-lg text-white shadow-lg rounded-lg py-2 px-7 text-center flex justify-center items-center font-poppins transition"
+                >
+                  Bestill nå
+                </a> */}
+                <Link
+                  to="/kontakt"
+                  className="hover:bg-rosedark bg-rose text-lg text-white shadow-lg rounded-lg py-2 px-7 text-center flex justify-center items-center font-poppins transition"
+                >
+                  Kontakt og bestill nå
+                </Link>
               </div>
 
-              <div className="mt-8 rounded-[2rem] border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
+              <div className="mt-8 rounded-lg border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
                 <p className="text-[16px] uppercase tracking-[0.2em] text-zinc-500 mb-4">
                   Kort beskrivelse
                 </p>
@@ -232,7 +239,8 @@ export default function EnkeltProdukt() {
                   </p>
                 </div>
               </div>
-              <div className="mt-8 rounded-[2rem] border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
+
+              <div className="mt-8 rounded-lg border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
                 <p className="text-[16px] uppercase tracking-[0.2em] text-zinc-500 mb-4">
                   Tema i diktene
                 </p>
@@ -270,7 +278,7 @@ export default function EnkeltProdukt() {
             } gap-6 w-full`}
           >
             <section className="w-full">
-              <div className="rounded-[2rem] border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
+              <div className="rounded-lg border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
                 <p className="text-[16px] uppercase tracking-[0.2em] text-zinc-500 mb-4">
                   {isBundle ? "Om pakken og bøkene" : "Om boken"}
                 </p>
@@ -285,7 +293,7 @@ export default function EnkeltProdukt() {
 
             {!isBundle && (
               <section className="w-full text-center">
-                <div className="rounded-[2rem] border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
+                <div className="rounded-lg border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
                   <p className="text-[16px] uppercase tracking-[0.2em] text-zinc-500 mb-8">
                     Dikt fra boken
                   </p>
@@ -301,7 +309,7 @@ export default function EnkeltProdukt() {
           </div>
           {book.reviews?.length > 0 && (
             <section className="lg:col-span-12">
-              <div className="rounded-[2rem] border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
+              <div className="rounded-lg border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
                 <p className="text-[16px] uppercase tracking-[0.2em] text-zinc-500 mb-6">
                   Kundeanmeldelser
                 </p>
@@ -310,7 +318,7 @@ export default function EnkeltProdukt() {
                   {book.reviews.map((review, index) => (
                     <div
                       key={`${review.author}-${index}`}
-                      className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm"
+                      className="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm"
                     >
                       <p className="text-[1rem] leading-7 text-zinc-700 italic">
                         “{review.quote}”

@@ -193,7 +193,7 @@ export default function EnkeltProdukt() {
                 {isBundle ? "Bokpakke" : "Diktbok"}
               </div> */}
 
-              <h1 className="text-4xl sm:text-5xl leading-tight font-semibold tracking-tight text-zinc-950">
+              <h1 className="text-4xl sm:text-5xl leading-tight font-semibold font-poppins tracking-tight text-zinc-950">
                 {book.title}
               </h1>
 
@@ -229,9 +229,9 @@ export default function EnkeltProdukt() {
               </div>
 
               <div className="mt-8 rounded-lg border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
-                <p className="text-[16px] uppercase tracking-[0.2em] text-zinc-500 mb-4">
+                <h2 className="text-xl uppercase tracking-[0.2em] text-zinc-500 mb-4">
                   Kort beskrivelse
-                </p>
+                </h2>
 
                 <div className="prose prose-zinc max-w-none">
                   <p className="text-[1.02rem] leading-8 text-zinc-700 whitespace-pre-line m-0">
@@ -241,7 +241,7 @@ export default function EnkeltProdukt() {
               </div>
 
               <div className="mt-8 rounded-lg border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
-                <p className="text-[16px] uppercase tracking-[0.2em] text-zinc-500 mb-4">
+                <p className="text-base uppercase tracking-[0.2em] text-zinc-500 mb-4">
                   Tema i diktene
                 </p>
 
@@ -264,7 +264,7 @@ export default function EnkeltProdukt() {
                     })}
                   </div>
                 ) : (
-                  <p className="text-[1rem] leading-7 text-zinc-600 m-0">
+                  <p className="text-[1rem] leading-7 text-zinc-600 m-0  font-poppins">
                     ... kommer snart!
                   </p>
                 )}
@@ -279,12 +279,12 @@ export default function EnkeltProdukt() {
           >
             <section className="w-full">
               <div className="rounded-lg border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
-                <p className="text-[16px] uppercase tracking-[0.2em] text-zinc-500 mb-4">
+                <h3 className="text-xl uppercase tracking-[0.2em] text-zinc-500 mb-4">
                   {isBundle ? "Om pakken og bøkene" : "Om boken"}
-                </p>
+                </h3>
 
                 <div className="prose prose-zinc max-w-none">
-                  <p className="text-[1.02rem] leading-8 text-zinc-700 whitespace-pre-line m-0">
+                  <p className="text-base leading-8 text-zinc-700 whitespace-pre-line m-0  font-poppins">
                     {book.longDescription || "Beskrivelse kommer snart."}
                   </p>
                 </div>
@@ -294,7 +294,7 @@ export default function EnkeltProdukt() {
             {!isBundle && (
               <section className="w-full text-center">
                 <div className="rounded-lg border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
-                  <p className="text-[16px] uppercase tracking-[0.2em] text-zinc-500 mb-8">
+                  <p className="text-xl uppercase tracking-[0.2em] text-zinc-500 mb-8  font-poppins">
                     Dikt fra boken
                   </p>
 

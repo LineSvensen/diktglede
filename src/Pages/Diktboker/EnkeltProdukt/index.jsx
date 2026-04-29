@@ -203,7 +203,7 @@ export default function EnkeltProdukt() {
                 </div>
               )}
 
-              <div className="mt-7 flex  flex-wrap gap-3">
+              <div className="mt-4 flex  flex-wrap gap-3">
                 {book.price && (
                   <div className="flex flex-row text-center items-center gap-2 rounded-lg border  border-zinc-200 bg-white px-4 py-3 shadow-sm ">
                     <p className="text-base uppercase tracking-[0.18em] text-zinc-500">
@@ -222,14 +222,14 @@ export default function EnkeltProdukt() {
                 </a> */}
                 <Link
                   to="/kontakt"
-                  className="hover:bg-rosedark bg-rose text-lg text-white shadow-lg rounded-lg py-2 px-7 text-center flex justify-center items-center font-poppins transition"
+                  className="hover:bg-rosedark bg-rose text-lg text-white shadow-lg rounded-full py-2 px-7 text-center flex justify-center items-center font-poppins transition"
                 >
                   Kontakt og bestill nå
                 </Link>
               </div>
 
               <div className="mt-8 rounded-lg border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
-                <h2 className="text-xl uppercase tracking-[0.2em] text-zinc-500 mb-4">
+                <h2 className="text-base uppercase tracking-[0.2em] text-zinc-500 mb-4">
                   Kort beskrivelse
                 </h2>
 
@@ -279,7 +279,7 @@ export default function EnkeltProdukt() {
           >
             <section className="w-full">
               <div className="rounded-lg border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
-                <h3 className="text-xl uppercase tracking-[0.2em] text-zinc-500 mb-4">
+                <h3 className="text-lg uppercase tracking-[0.2em] text-zinc-500 mb-4">
                   {isBundle ? "Om pakken og bøkene" : "Om boken"}
                 </h3>
 
@@ -294,7 +294,7 @@ export default function EnkeltProdukt() {
             {!isBundle && (
               <section className="w-full text-center">
                 <div className="rounded-lg border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
-                  <p className="text-xl uppercase tracking-[0.2em] text-zinc-500 mb-8  font-poppins">
+                  <p className="text-lg uppercase tracking-[0.2em] text-zinc-500 mb-8  font-poppins">
                     Dikt fra boken
                   </p>
 

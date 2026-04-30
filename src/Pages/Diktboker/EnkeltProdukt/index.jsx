@@ -193,12 +193,12 @@ export default function EnkeltProdukt() {
                 {isBundle ? "Bokpakke" : "Diktbok"}
               </div> */}
 
-              <h1 className="text-4xl sm:text-5xl leading-tight font-semibold font-poppins tracking-tight text-zinc-950">
+              <h1 className="text-4xl pb-4 poppins-bold text-black">
                 {book.title}
               </h1>
 
               {!isBundle && book.year && (
-                <div className=" mt-4 inline-flex items-center rounded-full font-medium py-1.5 text-base  uppercase tracking-[0.18em] text-rose ">
+                <div className=" inline-flex items-center rounded-full font-medium pb-2 text-base  uppercase tracking-[0.18em] text-rose ">
                   <p className=" ">Utgivelsesår: {book.year}</p>
                 </div>
               )}
@@ -222,7 +222,7 @@ export default function EnkeltProdukt() {
                 </a> */}
                 <Link
                   to="/kontakt"
-                  className="hover:bg-rosedark bg-rose text-lg text-white shadow-lg rounded-full py-2 px-7 text-center flex justify-center items-center font-poppins transition"
+                  className="hover:bg-rosedark bg-rose text-lg text-white shadow-lg rounded-full py-2 px-7 text-center flex justify-center items-center poppins-medium transition"
                 >
                   Kontakt og bestill nå
                 </Link>
@@ -233,7 +233,7 @@ export default function EnkeltProdukt() {
                   Kort beskrivelse
                 </h2>
 
-                <div className="prose prose-zinc max-w-none">
+                <div className="prose prose-zinc max-w-none poppins-regular">
                   <p className="text-[1.02rem] leading-8 text-zinc-700 whitespace-pre-line m-0">
                     {book.shortDescription || "Beskrivelse kommer snart."}
                   </p>
@@ -246,7 +246,7 @@ export default function EnkeltProdukt() {
                 </p>
 
                 {book.occasions?.length > 0 ? (
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-3 poppins-regular">
                     {book.occasions.map((item) => {
                       const entry = occasionMap[item];
                       if (!entry) return null;
@@ -284,7 +284,7 @@ export default function EnkeltProdukt() {
                 </h3>
 
                 <div className="prose prose-zinc max-w-none">
-                  <p className="text-base leading-8 text-zinc-700 whitespace-pre-line m-0  font-poppins">
+                  <p className="text-base leading-8 text-zinc-700 whitespace-pre-line m-0 poppins-regular">
                     {book.longDescription || "Beskrivelse kommer snart."}
                   </p>
                 </div>
@@ -298,7 +298,7 @@ export default function EnkeltProdukt() {
                     Dikt fra boken
                   </p>
 
-                  <div className="prose prose-zinc max-w-none">
+                  <div className="prose prose-zinc max-w-none poppins-regular">
                     <p className="text-[1.02rem] leading-8 text-zinc-700 whitespace-pre-line m-0">
                       {book.poem || "Dikt kommer snart."}
                     </p>
@@ -314,7 +314,7 @@ export default function EnkeltProdukt() {
                   Kundeanmeldelser
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 poppins-regular">
                   {book.reviews.map((review, index) => (
                     <div
                       key={`${review.author}-${index}`}

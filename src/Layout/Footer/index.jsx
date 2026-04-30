@@ -4,7 +4,7 @@ import koderaLogo from "../../assets/k-in-kodera.svg";
 
 export default function Footer() {
   return (
-    <footer className="bg-palepink text-gray-700 border-t border-pink-100 mt-4 poppins-regular">
+    <footer className="bg-palepink text-gray-700 border-t border-pink-100  poppins-regular">
       <div className="max-w-7xl mx-auto px-6 py-12 grid gap-8 md:grid-cols-3">
         {/* --- Column 1: Logo + intro --- */}
         <div>

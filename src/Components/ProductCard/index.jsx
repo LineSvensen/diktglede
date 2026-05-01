@@ -23,7 +23,7 @@ export default function ProductCard({ book }) {
   return (
     <Link
       to={`/diktboker/${slug}`}
-      className="group relative flex flex-col h-full max-w-[320px] bg-white rounded-md overflow-hidden shadow-lg border hover:border-rose/20 hover:bg-babypink border-gray-200 hover:shadow-xl transition-all duration-300"
+      className="group relative flex flex-col h-full max-w-[320px] bg-white rounded-md overflow-hidden shadow-lg border hover:border-rose/20 hover:bg-babypink border-gray-200 hover:shadow-xl transition-all duration-300 poppins-regular"
     >
       {!available && (
         <span className="absolute top-3 left-3 bg-gray-800/80 text-white text-xs px-2 py-1 rounded-md z-10">
@@ -49,7 +49,7 @@ export default function ProductCard({ book }) {
       </div>
 
       <div className="flex flex-col flex-grow p-5">
-        <h2 className="text-lg font-semibold text-[#d63772] mb-1 leading-snug group-hover:text-[#ae295a] transition">
+        <h2 className="text-lg poppins-bold text-[#d63772] mb-1 leading-snug group-hover:text-[#ae295a] transition">
           {title}
         </h2>
 

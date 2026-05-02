@@ -39,7 +39,7 @@ export default function Hjem() {
   if (loading) return <Loader text="Laster inn siden..." />;
 
   return (
-    <div className="max-w-7xl mx-auto p-4">
+    <div className="max-w-7xl mx-auto p-4 mb-8">
       <div className="relative">
         <img
           src={roseThree}

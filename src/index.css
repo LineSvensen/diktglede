@@ -9,8 +9,10 @@
   --color-cyandark: #57aa9d;
   --color-purple: #bd9ca8;
   --color-purpledark: #8d6d76;
-  --color-black: #464646;
+  --color-black: #616161;
+  --color-gray: #8f8f8f;
   --color-blackdark: #2a2a2a;
+
   --color-nude: #dbd0c1;
   --color-cream: #fffaf2;
   --color-dustypink: #f9e7e7;
@@ -25,25 +27,32 @@ body {
 
 .btn-base {
   display: flex;
+  justify-content: center;
   text-align: center;
-  border-radius: 100%;
-  padding: 4px 4px 4px 4px;
+  border-radius: 150px;
   background-color: var(--color-rose);
   color: white;
+  transition: 0.3s;
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
-.btn-base:hover {
-  background-color: var(--color-darkrose);
+.btn-base:hover,
+.btn-small:hover {
+  background-color: var(--color-rosedark);
 }
 
 .btn-large {
-  font-size: 16px;
-}
-
-.btn-medium {
+  padding: 16px 20px 16px 20px;
 }
 
 .btn-small {
+  padding: 8px 20px 8px 20px;
+}
+
+.btn-medium {
+  font-size: 18px;
 }
 
 .homemade-apple-regular {

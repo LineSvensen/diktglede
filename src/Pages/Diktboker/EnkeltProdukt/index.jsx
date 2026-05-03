@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import { client } from "../../../sanityClient";
 import Loader from "../../../Components/Loader/loader";
+import BackButton from "../../../Components/BackButton";
 import { IoChevronBackCircleOutline } from "react-icons/io5";
 import { TiChevronLeft } from "react-icons/ti";
 import { PiArrowCircleLeft } from "react-icons/pi";
@@ -130,7 +131,7 @@ export default function EnkeltProdukt() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#f7c2d1] via-white to-[#ffffff] text-zinc-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <Link
+        {/* <Link
           to="/"
           className="bg-white/40 py-2 px-4 rounded-lg shadow inline-flex items-center gap-2 text-base  text-[#d63772] hover:text-pink-800 transition-colors mb-8 "
         >
@@ -138,7 +139,9 @@ export default function EnkeltProdukt() {
             <PiArrowCircleLeft />
           </span>
           Til forsiden
-        </Link>
+        </Link> */}
+
+        <BackButton />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-7 items-start">
           <section className="lg:col-span-6 xl:col-span-7">
@@ -206,7 +209,7 @@ export default function EnkeltProdukt() {
               <div className="mt-4 flex  flex-wrap gap-3">
                 {book.price && (
                   <div className="flex flex-row text-center items-center gap-2 rounded-lg border  border-zinc-200 bg-white px-4 py-3 shadow-sm ">
-                    <p className="text-base uppercase tracking-[0.18em] text-zinc-500">
+                    <p className="text-base uppercase tracking-[0.18em] text-gray">
                       Pris
                     </p>
                     <p className=" text-lg font-medium text-black">
@@ -222,26 +225,26 @@ export default function EnkeltProdukt() {
                 </a> */}
                 <Link
                   to="/kontakt"
-                  className="hover:bg-rosedark bg-rose text-lg text-white shadow-lg rounded-full py-2 px-7 text-center flex justify-center items-center poppins-medium transition"
+                  className="btn-base btn-large poppins-medium "
                 >
                   Kontakt og bestill nå
                 </Link>
               </div>
 
               <div className="mt-8 rounded-lg border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
-                <h2 className="text-base uppercase tracking-[0.2em] text-zinc-500 mb-4">
+                <h2 className="text-base uppercase tracking-[0.2em] text-gray mb-4">
                   Kort beskrivelse
                 </h2>
 
                 <div className="prose prose-zinc max-w-none poppins-regular">
-                  <p className="text-[1.02rem] leading-8 text-zinc-700 whitespace-pre-line m-0">
+                  <p className="text-[1.02rem] leading-8 text-black whitespace-pre-line m-0">
                     {book.shortDescription || "Beskrivelse kommer snart."}
                   </p>
                 </div>
               </div>
 
               <div className="mt-8 rounded-lg border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
-                <p className="text-base uppercase tracking-[0.2em] text-zinc-500 mb-4">
+                <p className="text-base uppercase tracking-[0.2em] text-gray mb-4">
                   Tema i diktene
                 </p>
 
@@ -255,7 +258,7 @@ export default function EnkeltProdukt() {
                       return (
                         <div
                           key={item}
-                          className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm text-zinc-700"
+                          className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm text-black"
                         >
                           <Icon className="text-[#d63772] text-lg" />
                           <span>{entry.label}</span>
@@ -264,7 +267,7 @@ export default function EnkeltProdukt() {
                     })}
                   </div>
                 ) : (
-                  <p className="text-[1rem] leading-7 text-zinc-600 m-0  font-poppins">
+                  <p className="text-[1rem] leading-7 text-gray m-0  font-poppins">
                     ... kommer snart!
                   </p>
                 )}
@@ -279,12 +282,12 @@ export default function EnkeltProdukt() {
           >
             <section className="w-full">
               <div className="rounded-lg border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
-                <h3 className="text-lg uppercase tracking-[0.2em] text-zinc-500 mb-4">
+                <h3 className="text-lg uppercase tracking-[0.2em] text-gray mb-4">
                   {isBundle ? "Om pakken og bøkene" : "Om boken"}
                 </h3>
 
                 <div className="prose prose-zinc max-w-none">
-                  <p className="text-base leading-8 text-zinc-700 whitespace-pre-line m-0 poppins-regular">
+                  <p className="text-base leading-8 text-black whitespace-pre-line m-0 poppins-regular">
                     {book.longDescription || "Beskrivelse kommer snart."}
                   </p>
                 </div>
@@ -294,12 +297,12 @@ export default function EnkeltProdukt() {
             {!isBundle && (
               <section className="w-full text-center">
                 <div className="rounded-lg border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
-                  <p className="text-lg uppercase tracking-[0.2em] text-zinc-500 mb-8  font-poppins">
+                  <p className="text-lg uppercase tracking-[0.2em] text-gray mb-8  font-poppins">
                     Dikt fra boken
                   </p>
 
                   <div className="prose prose-zinc max-w-none poppins-regular">
-                    <p className="text-[1.02rem] leading-8 text-zinc-700 whitespace-pre-line m-0">
+                    <p className="text-[1.02rem] leading-8 text-black whitespace-pre-line m-0">
                       {book.poem || "Dikt kommer snart."}
                     </p>
                   </div>
@@ -310,7 +313,7 @@ export default function EnkeltProdukt() {
           {book.reviews?.length > 0 && (
             <section className="lg:col-span-12">
               <div className="rounded-lg border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
-                <p className="text-[16px] uppercase tracking-[0.2em] text-zinc-500 mb-6">
+                <p className="text-[16px] uppercase tracking-[0.2em] text-gray mb-6">
                   Kundeanmeldelser
                 </p>
 
@@ -320,10 +323,10 @@ export default function EnkeltProdukt() {
                       key={`${review.author}-${index}`}
                       className="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm"
                     >
-                      <p className="text-[1rem] leading-7 text-zinc-700 italic">
+                      <p className="text-base leading-7 text-black italic">
                         “{review.quote}”
                       </p>
-                      <p className="mt-4 text-sm font-medium text-[#d63772]">
+                      <p className="mt-4 text-sm poppins-bold text-rose">
                         – {review.author}
                       </p>
                     </div>

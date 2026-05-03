@@ -33,7 +33,7 @@ export default function OmMeg() {
           <h1 className="text-3xl font-bold text-[#d63772] mb-4 pb-2 lg:pl-8">
             Om Marit
           </h1>
-          <p className="text-gray-700 px-8 whitespace-normal [overflow-wrap:anywhere]">
+          <p className="text-black px-8 whitespace-normal [overflow-wrap:anywhere]">
             {cleanBio}
           </p>
         </div>

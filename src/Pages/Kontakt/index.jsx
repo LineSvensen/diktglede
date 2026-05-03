@@ -3,7 +3,7 @@ export default function Kontakt() {
     <div className="  flex flex-col items-center text-black  text-center bg-palepink poppins-regular">
       <div className=" max-w-[330px] sm:max-w-[500px] bg-antiquePink rounded-lg  p-16 m-12 flex flex-col text-center justify-center items-center">
         <h1 className="text-3xl poppins-bold text-rose   ">Kontakt Marit</h1>
-        <p className="text-gray-700 text-lg pb-2 pt-4">
+        <p className="text-black text-lg pb-2 pt-4">
           Send mail for bestilling:
         </p>
 
@@ -20,7 +20,7 @@ export default function Kontakt() {
             <span>+47 900 00 000</span>
           </li> */}
         </ul>
-        <p className="text-gray-500 text-base   text-center pt-4 ">
+        <p className="text-gray text-base   text-center pt-4 ">
           (Et nytt vindu vil åpne der du kan skrive en mail med dine ønsker
           eller andre spørsmål)
         </p>

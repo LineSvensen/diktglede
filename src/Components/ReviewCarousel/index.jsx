@@ -153,7 +153,7 @@ const ReviewCarousel = ({
   if (visibleReviews.length === 0) {
     return (
       <div className="flex h-64 items-center justify-center rounded-lg bg-gray-100">
-        <p className="text-gray-500">Ingen anmeldelser å vise</p>
+        <p className="text-gray ">Ingen anmeldelser å vise</p>
       </div>
     );
   }
@@ -205,7 +205,7 @@ const ReviewCarousel = ({
             {/* Sitat - dynamisk font-størrelse */}
             <div className="flex-1 flex items-center justify-center mb-3 sm:mb-4 overflow-y-auto">
               <p
-                className={`${fontSizeClass} leading-relaxed text-gray-700 text-center transition-all duration-300 px-8 sm:px-2`}
+                className={`${fontSizeClass} leading-relaxed text-black  poppins-regular text-center transition-all duration-300 px-8 sm:px-2`}
               >
                 "{currentReview.quote}"
               </p>
@@ -213,11 +213,11 @@ const ReviewCarousel = ({
 
             {/* Forfatter og dato - kompakt på mobil */}
             <div className="flex-shrink-0 pt-3 sm:pt-4 border-t border-gray-100 text-center">
-              <p className="font-semibold text-gray-900 text-xs sm:text-sm md:text-base">
+              <p className="poppins-bold text-black text-xs sm:text-sm md:text-base">
                 {currentReview.author}
               </p>
               {currentReview.date && (
-                <p className="text-[10px] sm:text-xs md:text-sm text-gray-500 mt-0.5 sm:mt-1">
+                <p className="text-[10px] sm:text-xs md:text-sm text-gray poppins-regular mt-0.5 sm:mt-1">
                   {new Date(currentReview.date).toLocaleDateString("no-NO", {
                     year: "numeric",
                     month: "long",
@@ -235,7 +235,7 @@ const ReviewCarousel = ({
           className="absolute border-1 border-gray-100 left-1  sm:left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-1 sm:p-1.5 md:p-2 shadow-md transition hover:bg-white sm:md:left-4 z-10"
           aria-label="Forrige anmeldelse"
         >
-          <ChevronLeft className="w-5 h-5   cursor-pointer text-gray-600" />
+          <ChevronLeft className="w-5 h-5   cursor-pointer text-gray" />
         </button>
 
         <button
@@ -243,19 +243,19 @@ const ReviewCarousel = ({
           className="absolute border-1 border-gray-100 right-1 sm:right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-1 sm:p-1.5 md:p-2 shadow-md transition hover:bg-white sm:md:right-4 z-10"
           aria-label="Neste anmeldelse"
         >
-          <ChevronRight className="w-5 h-5  cursor-pointer text-gray-600" />
+          <ChevronRight className="w-5 h-5  cursor-pointer text-gray " />
         </button>
 
         {/* Auto-play kontroll - mindre på mobil */}
         <button
           onClick={toggleAutoPlay}
-          className="absolute bottom-2 sm:bottom-3 right-2 sm:right-3 cursor-pointer rounded-full bg-gray-100 p-1 sm:p-1.5 md:p-2 transition hover:bg-gray-200 z-10"
+          className="absolute bottom-2 sm:bottom-3 right-2 sm:right-3 cursor-pointer rounded-full bg-gray p-1 sm:p-1.5 md:p-2 transition hover:bg-gray-200 z-10"
           aria-label={isAutoPlaying ? "Pause" : "Spill"}
         >
           {isAutoPlaying ? (
-            <Pause className="h-4 w-4 sm:h-3 sm:w-3 md:h-4 md:w-4 text-gray-600" />
+            <Pause className="h-4 w-4 sm:h-3 sm:w-3 md:h-4 md:w-4 text-white" />
           ) : (
-            <Play className="h-4 w-4 sm:h-3 sm:w-3 md:h-4 md:w-4 text-gray-600" />
+            <Play className="h-4 w-4 sm:h-3 sm:w-3 md:h-4 md:w-4 text-white" />
           )}
         </button>
       </div>

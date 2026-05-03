@@ -4,14 +4,14 @@ import koderaLogo from "../../assets/k-in-kodera.svg";
 
 export default function Footer() {
   return (
-    <footer className="bg-palepink text-gray-700 border-t border-pink-100  poppins-regular">
+    <footer className="bg-palepink text-black border-t border-pink-100  poppins-regular">
       <div className="max-w-7xl mx-auto px-6 py-12 grid gap-8 md:grid-cols-3">
         {/* --- Column 1: Logo + intro --- */}
         <div>
           <h2 className="text-2xl font-semibold text-[#d63772] mb-3">
             Diktglede
           </h2>
-          <p className="text-sm text-gray-600 leading-relaxed">
+          <p className="text-sm text-black leading-relaxed">
             Velkommen til min verden av dikt, ord og følelser. Her finner du
             mine diktbøker, inspirasjon og kontaktinformasjon. - Marit
           </p>
@@ -77,7 +77,7 @@ export default function Footer() {
       </div>
 
       {/* --- Bottom bar --- */}
-      <div className="flex justify-evenly  items-center flex-col gap-4 border-t border-palepink mt-8 py-4 text-center text-xs text-gray-500">
+      <div className="flex justify-evenly  items-center flex-col gap-4 border-t border-palepink mt-8 py-4 text-center text-xs text-black/80">
         <p className="flex flex-col sm:flex-row items-center gap-2 justify-center">
           <img src={koderaLogo} alt="Kodera" className="h-6" />
           Denne nettsiden er utviklet med ❤️ av kvinner i Kodera

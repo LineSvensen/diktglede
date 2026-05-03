@@ -23,6 +23,29 @@ body {
   overflow-x: hidden;
 }
 
+.btn-base {
+  display: flex;
+  text-align: center;
+  border-radius: 100%;
+  padding: 4px 4px 4px 4px;
+  background-color: var(--color-rose);
+  color: white;
+}
+
+.btn-base:hover {
+  background-color: var(--color-darkrose);
+}
+
+.btn-large {
+  font-size: 16px;
+}
+
+.btn-medium {
+}
+
+.btn-small {
+}
+
 .homemade-apple-regular {
   font-family: "Homemade Apple", cursive;
   font-weight: 600;
@@ -155,8 +178,6 @@ body {
   font-weight: 500;
   font-style: normal;
 }
-
-
 
 /* .press-cover {
   display: flex;

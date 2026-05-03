@@ -196,7 +196,7 @@ export default function EnkeltProdukt() {
                 {isBundle ? "Bokpakke" : "Diktbok"}
               </div> */}
 
-              <h1 className="text-4xl pb-4 poppins-bold text-black">
+              <h1 className="text-4xl pb-4 poppins-bold text-blackdark">
                 {book.title}
               </h1>
 

@@ -54,16 +54,33 @@ export default function OmMeg() {
   ];
 
   return (
-    <div className="max-w-5xl mx-auto p-4 sm:p-8">
-      <h1 className="text-3xl font-bold text-[#d63772] mb-8 text-center lg:text-left lg:pl-8">
-        Om Marit
-      </h1>
+    <div className="max-w-5xl mx-auto p-4 sm:p-8 poppins-regular">
+      {/* First section - stands out */}
+      <div className="flex flex-col lg:flex-row gap-12 justify-center items-center text-center lg:text-left mb-16">
+        <div>
+          <h1 className="text-4xl poppins-bold text-rose pb-2 mb-4 lg:pl-8">
+            Om Marit
+          </h1>
+          <p className="text-black px-8 text-lg poppins-regular whitespace-normal [overflow-wrap:anywhere]">
+            {sections[0].bio}
+          </p>
+        </div>
+        {sections[0].image && (
+          <img
+            src={urlFor(sections[0].image).width(500).url()}
+            alt={sections[0].image.alt || "Marit"}
+            className="rounded-lg sm:w-1/2"
+          />
+        )}
+      </div>
+
+      {/* Remaining 4 sections */}
       <div className="flex flex-col gap-16">
-        {sections.map((section, index) => (
+        {sections.slice(1).map((section, index) => (
           <div
             key={index}
             className={`flex flex-col lg:flex-row gap-12 justify-center items-center text-center lg:text-left ${
-              index % 2 !== 0 ? "lg:flex-row-reverse" : ""
+              index % 2 === 0 ? "lg:flex-row-reverse" : ""
             }`}
           >
             {section.bio && (

@@ -22,7 +22,7 @@ export default function HeroSlide3() {
         </p>
         <Link
           to="/kontakt"
-          className="px-6 py-3 bg-rose text-white rounded-lg font-semibold hover:bg-rosedark transition w-40"
+          className="px-6 py-3 bg-rose text-white rounded-full shadow poppins-medium hover:bg-rosedark transition w-40"
         >
           Kontakt Marit
         </Link>

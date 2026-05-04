@@ -22,19 +22,19 @@ export default function HeroSlide2() {
 
       {/* text content */}
       <div className="relative  lg:h-[300px]  z-10 px-4 sm:px-8 py-4 sm:p-8  lg:pl-8 lg:pr-8 rounded-xl flex flex-col  justify-center items-center lg:items-start text-center lg:text-left w-full lg:w-1/2 max-w-lg gap-3 lg:gap-5">
-        <h2 className="text-2xl flex flex-row justify-center items-center  md:text-5xl font-extrabold text-rose poppins ">
+        <h2 className="text-3xl flex flex-row justify-center items-center  md:text-5xl font-extrabold text-rose poppins ">
           Bokpakken
         </h2>
         <h3 className="text-base flex flex-row justify-center items-center  md:text-3xl font-extrabold text-black sm:text-cyandark poppins ">
-          - Skaff deg alle bøkene !
+          Skaff deg alle bøkene !
         </h3>
-        <p className="text-gray-700 text-base sm:text-md md:text-lg leading-relaxed font-poppins">
+        <p className="text-gray-700 text-base sm:text-md md:text-lg leading-relaxed poppins-regular">
           Kjøp bokpakken som eksklusivt inkluderer den aller første diktboken{" "}
           <em>“Dans på roser”</em> - kun i begrenset opplag
         </p>
         <Link
           to="/diktboker/pakke-med-alle-bokene"
-          className="inline-block mt-2 px-6 py-3 bg-[#d63772] text-white rounded-lg font-semibold hover:bg-[#ae295a] transition"
+          className="inline-block mt-2 px-6 py-3 bg-[#d63772] text-white rounded-full poppins-medium shadow hover:bg-[#ae295a] transition"
         >
           Se mer
         </Link>

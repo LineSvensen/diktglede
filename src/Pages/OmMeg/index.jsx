@@ -54,7 +54,7 @@ export default function OmMeg() {
   ];
 
   return (
-    <div className="max-w-5xl mx-auto p-4 sm:p-8 poppins-regular">
+    <div className="max-w-5xl mx-auto pb-12 pl-4 pr-4 pt-4  sm:pb-16 poppins-regular">
       {/* First section - stands out */}
       <div className="flex flex-col lg:flex-row gap-12 justify-center items-center text-center lg:text-left mb-16">
         <div>

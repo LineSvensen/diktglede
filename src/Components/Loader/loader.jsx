@@ -1,10 +1,15 @@
 import { Loader2 } from "lucide-react";
+import Lottie from "lottie-react";
+import loaderAnimation from "../../assets/pinkloader.json";
 
-export default function Loader({ text = "Laster inn..." }) {
+export default function Loader() {
   return (
-    <div className="flex flex-col items-center justify-center py-20 text-gray-600 animate-fadeIn">
-      <Loader2 className="h-10 w-10 animate-spin text-gray-500 mb-4" />
-      <p className="text-sm tracking-wide">{text}</p>
+    <div className="fixed inset-0 z-[9999] flex min-h-screen w-screen flex-col items-center justify-center bg-white">
+      <Lottie
+        animationData={loaderAnimation}
+        loop={true}
+        className="h-150 w-150"
+      />
     </div>
   );
 }

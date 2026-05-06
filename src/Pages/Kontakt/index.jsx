@@ -1,4 +1,20 @@
+import { useState, useEffect } from "react";
+import Loader from "../../Components/Loader/loader";
+
 export default function Kontakt() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 800);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <div className="  flex flex-col items-center text-black  text-center bg-palepink poppins-regular ">
       <div className=" max-w-[330px] sm:max-w-[500px] bg-antiquePink rounded-lg  p-16 m-12 flex flex-col text-center justify-center items-center ">

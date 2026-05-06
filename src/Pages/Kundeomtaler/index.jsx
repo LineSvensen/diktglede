@@ -28,7 +28,7 @@ export default function Kundeomtaler() {
   }, []);
 
   if (loading) {
-    return <Loader text="Laster inn siden..." />;
+    return <Loader />;
   }
 
   return (

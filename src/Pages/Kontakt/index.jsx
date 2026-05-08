@@ -26,10 +26,10 @@ export default function Kontakt() {
         <ul className="space-y-2 text-sm ">
           <li className="flex items-center space-x-2 m-4">
             <a
-              href="mailto:maritsvensen@gmail.com"
+              href="mailto:marithardeberg@gmail.com"
               className="hover:bg-cyandark bg-cyan text-lg  poppins-bold  hover:text-white shadow-lg rounded-lg py-2 px-7 text-center flex justify-center transition"
             >
-              maritsvensen@gmail.com
+              marithardeberg@gmail.com
             </a>
           </li>
           {/* <li className="flex items-center space-x-2">

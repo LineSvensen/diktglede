@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import Loader from "../../Components/Loader/loader";
+import ehs from "../../assets/ehs-fb.png";
+import fbgruppe from "../../assets/maritfb.png";
 
 export default function Kontakt() {
   const [loading, setLoading] = useState(true);
@@ -16,8 +18,8 @@ export default function Kontakt() {
   }
 
   return (
-    <div className="  flex flex-col items-center text-black  text-center bg-palepink poppins-regular ">
-      <div className=" max-w-[330px] sm:max-w-[500px] bg-antiquePink rounded-lg  p-16 m-12 flex flex-col text-center justify-center items-center ">
+    <div className="  flex flex-col lg:flex-row justify-center  items-center gap-8 text-black pb-24 text-center bg-palepink poppins-regular ">
+      <div className=" max-w-[330px] sm:max-w-[500px] bg-antiquePink rounded-lg p-8 mt-8 ml-4 mr-4  lg:p-16 lg:mt-12  flex flex-col text-center justify-center items-center ">
         <h1 className="text-3xl poppins-bold text-rose   ">Kontakt Marit</h1>
         <p className="text-black text-lg pb-2 pt-4">
           Send mail for bestilling:
@@ -27,7 +29,7 @@ export default function Kontakt() {
           <li className="flex items-center space-x-2 m-4">
             <a
               href="mailto:marithardeberg@gmail.com"
-              className="hover:bg-cyandark bg-cyan text-lg  poppins-bold  hover:text-white shadow-lg rounded-lg py-2 px-7 text-center flex justify-center transition"
+              className="hover:bg-cyandark bg-cyan text-base lg:text-lg  poppins-bold  hover:text-white shadow-lg rounded-lg py-2 px-7 text-center flex justify-center transition"
             >
               marithardeberg@gmail.com
             </a>
@@ -44,6 +46,32 @@ export default function Kontakt() {
           Husk å si ifra om bøkene skal bli signert og/eller inkludere en
           hyggelig melding! ❤️
         </p>
+      </div>
+      <div className="flex flex-col justify-center items-center max-w-130 lg:mt-4 pt-4 lg:pt-12 ml-4 mr-4 ">
+        <h2 className="poppins-bold text-lg">
+          Følg med på "Engler, Hjerter og Sommerfugler" på Facebook{" "}
+        </h2>
+        <p className="p-4 poppins-regular">
+          Her kan du også kontakte Marit for bestilling. Klikk{" "}
+          <a
+            href="https://www.facebook.com/engleroghjerter"
+            className="text-rose poppins-bold"
+          >
+            HER
+          </a>{" "}
+          for å gå til facebook-siden eller kopier lenken:
+          facebook.com/engleroghjerter{" "}
+        </p>
+        <img
+          src={fbgruppe}
+          alt="facebook-gruppe"
+          className="bg-white rounded-lg w-70 mb-12"
+        ></img>
+        {/* <img
+        src={ehs}
+        alt="facebook-gruppe"
+        className="bg-white rounded-full"
+      ></img> */}
       </div>
     </div>
   );

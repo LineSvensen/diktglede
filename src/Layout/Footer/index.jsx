@@ -12,8 +12,8 @@ export default function Footer() {
             Diktglede
           </h2>
           <p className="text-sm text-black leading-relaxed">
-            Velkommen til min verden av dikt, ord og følelser. Her finner du
-            mine diktbøker, inspirasjon og kontaktinformasjon. - Marit
+            Velkommen til Marits verden av dikt, ord og følelser! Her finner du
+            hennes diktbøker, inspirasjon og kontaktinformasjon.
           </p>
         </div>
 

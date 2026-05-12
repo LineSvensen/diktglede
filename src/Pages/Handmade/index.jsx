@@ -45,9 +45,14 @@ export default function Handmade() {
 
   return (
     <div className="mx-auto p-4 sm:p-8 flex flex-col items-center bg-antiquePink min-h-screen poppins-regular">
-      <h1 className="text-3xl sm:text-4xl font-bold poppins-bold text-rose mb-8">
-        Ting med dikt på
+      <h1 className="text-3xl sm:text-4xl font-bold poppins-bold text-rose mb-4">
+        Diktgaver
       </h1>
+      <p className="text-center pb-8 lg:max-w-1/2">
+        Håndlagde ting med dikt på - alt laget av Marit. Mange av tingene er
+        gjenbruk av treverk som har fått nye liv. Diktene er fra Marits bøker.
+        Kontakt Marit dersom du ønsker å bestille ❤️
+      </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl items-start">
         {items.map((item, i) => (
@@ -59,7 +64,7 @@ export default function Handmade() {
         ))}
       </div>
 
-      {/* Popup / lightbox with carousel */}
+      {/* POPUP */}
       {popup && (
         <div
           onClick={closePopup}
@@ -70,7 +75,7 @@ export default function Handmade() {
               e.stopPropagation();
               closePopup();
             }}
-            className="absolute top-2 sm:top-8 right-6 sm:right-16 text-white text-5xl leading-none hover:text-gray-300 transition-colors cursor-pointer"
+            className="absolute bg-black/20 rounded-full top-4 sm:top-8 right-6 sm:right-16 text-white text-5xl leading-none hover:text-gray-300 transition-colors cursor-pointer"
           >
             <IoClose />
           </button>
@@ -85,13 +90,13 @@ export default function Handmade() {
             <>
               <button
                 onClick={popupPrev}
-                className="absolute lg:left-60 left-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-white/40 text-white text-3xl rounded-full w-10 h-10 flex items-center justify-center transition-colors"
+                className="absolute cursor-pointer lg:left-60 left-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-white/40 text-white text-3xl rounded-full w-10 h-10 flex items-center justify-center transition-colors"
               >
                 <IoIosArrowBack />
               </button>
               <button
                 onClick={popupNext}
-                className="absolute lg:right-60 right-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-white/40 text-white text-3xl rounded-full w-10 h-10 flex items-center justify-center transition-colors"
+                className="absolute  cursor-pointer lg:right-60 right-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-white/40 text-white text-3xl rounded-full w-10 h-10 flex items-center justify-center transition-colors"
               >
                 <IoIosArrowForward />
               </button>
@@ -105,7 +110,7 @@ export default function Handmade() {
                       e.stopPropagation();
                       setPopup((p) => ({ ...p, index: idx }));
                     }}
-                    className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                    className={`w-2.5 h-2.5 rounded-full cursor-pointer transition-colors ${
                       idx === popup.index ? "bg-white" : "bg-white/40"
                     }`}
                   />
@@ -118,6 +123,8 @@ export default function Handmade() {
     </div>
   );
 }
+
+// NOT POPUP
 
 function ProductCard({ item, onImageClick }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -137,27 +144,27 @@ function ProductCard({ item, onImageClick }) {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full">
       {/* Fixed-size image area */}
-      <div className="relative w-full h-100 bg-gray-100 flex-shrink-0 ">
+      <div className="relative w-full h-100 bg-white p-2 flex-shrink-0 ">
         {images.length > 0 ? (
           <>
             <img
               src={urlFor(images[currentIndex]).width(600).url()}
               alt={item.title || ""}
               onClick={() => onImageClick(images, currentIndex)}
-              className="w-full h-full object-contain p-2 cursor-pointer hover:opacity-95 transition-opacity"
+              className="w-full h-full object-contain  cursor-pointer hover:opacity-95 transition-opacity"
             />
 
             {hasMultiple && (
               <>
                 <button
                   onClick={prev}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full w-8 h-8 flex items-center justify-center shadow transition-colors"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/30 cursor-pointer hover:bg-black text-white rounded-full w-8 h-8 flex items-center justify-center shadow transition-colors"
                 >
                   <IoIosArrowBack />
                 </button>
                 <button
                   onClick={next}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full w-8 h-8 flex items-center justify-center shadow transition-colors"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/30 cursor-pointer hover:bg-black text-white rounded-full w-8 h-8 flex items-center justify-center shadow transition-colors"
                 >
                   <IoIosArrowForward />
                 </button>
@@ -171,7 +178,7 @@ function ProductCard({ item, onImageClick }) {
                         e.stopPropagation();
                         setCurrentIndex(idx);
                       }}
-                      className={`w-2 h-2 rounded-full transition-colors ${
+                      className={`w-2 h-2 rounded-full cursor-pointer transition-colors  ${
                         idx === currentIndex ? "bg-white" : "bg-white/50"
                       }`}
                     />

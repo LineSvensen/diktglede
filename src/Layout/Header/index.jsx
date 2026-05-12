@@ -39,7 +39,7 @@ export default function Header() {
 
           {/* burger button */}
           <button
-            className="md:hidden text-[#d63772]  cursor-pointer"
+            className="lg:hidden text-[#d63772]  cursor-pointer"
             onClick={() => setMobileMenuOpen(true)}
           >
             <Menu className="w-7 h-7" />

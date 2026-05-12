@@ -14,7 +14,7 @@ export default function DesktopNav({
     }`;
 
   return (
-    <nav className="hidden md:flex items-center space-x-6 poppins-regular">
+    <nav className="hidden lg:flex items-center space-x-6 poppins-regular">
       <NavLink to="/" end className={linkStyle}>
         Hjem
       </NavLink>
@@ -37,6 +37,9 @@ export default function DesktopNav({
       </NavLink>
       <NavLink to="/presse" className={linkStyle}>
         Presse
+      </NavLink>
+      <NavLink to="/handmade" className={linkStyle}>
+        Diktgaver
       </NavLink>
     </nav>
   );

@@ -78,6 +78,13 @@ export default function MobileMenu({
         >
           Presse
         </NavLink>
+        <NavLink
+          to="/handmade"
+          className="hover:text-[#367268] font-semibold"
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          Diktgaver
+        </NavLink>
         <div className="flex flex-col space-y-1">
           <span className="poppins-semibold  pb-2">Diktbøker</span>
           <Link

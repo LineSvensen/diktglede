@@ -8,6 +8,7 @@ import EnkeltProdukt from "./Pages/Diktboker/EnkeltProdukt";
 import Kontakt from "./Pages/Kontakt";
 import Kundeomtaler from "./Pages/Kundeomtaler";
 import Presse from "./Pages/Presse";
+import Handmade from "./Pages/Handmade";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="kontakt" element={<Kontakt />} />
           <Route path="kundeomtaler" element={<Kundeomtaler />} />
           <Route path="presse" element={<Presse />} />
+          <Route path="handmade" element={<Handmade />} />
         </Route>
       </Routes>
     </>

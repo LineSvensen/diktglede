@@ -11,7 +11,6 @@ export default function DiktbokerDropdown({
   const [books, setBooks] = useState([]);
   const location = useLocation();
 
-  // 👇 detect if current route starts with /diktboker
   const isActive = location.pathname.startsWith("/diktboker");
 
   useEffect(() => {
@@ -20,7 +19,7 @@ export default function DiktbokerDropdown({
         `*[_type == "book"] | order(title asc) {
           title,
           "slug": slug.current
-        }`
+        }`,
       );
       setBooks(data);
     };

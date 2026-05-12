@@ -1,77 +1,113 @@
 import { useState, useEffect } from "react";
 import Loader from "../../Components/Loader/loader";
-import ehs from "../../assets/ehs-fb.png";
-import fbgruppe from "../../assets/maritfb.png";
+import fbgruppe from "../../assets/maritfb2.png";
 
 export default function Kontakt() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 800);
+    const timer = setTimeout(() => setLoading(false), 800);
     return () => clearTimeout(timer);
   }, []);
 
-  if (loading) {
-    return <Loader />;
-  }
+  if (loading) return <Loader />;
 
   return (
-    <div className="  flex flex-col lg:flex-row justify-center  items-center gap-8 text-black pb-24 text-center bg-palepink poppins-regular ">
-      <div className=" max-w-[330px] sm:max-w-[500px] bg-antiquePink rounded-lg p-8 mt-8 ml-4 mr-4  lg:p-16 lg:mt-12  flex flex-col text-center justify-center items-center ">
-        <h1 className="text-3xl poppins-bold text-rose   ">Kontakt Marit</h1>
-        <p className="text-black text-lg pb-2 pt-4">
-          Send mail for bestilling:
-        </p>
+    <div className="min-h-screen bg-palepink poppins-regular flex flex-col items-center px-4 py-16 text-black">
+      {/* Page title */}
+      <h1 className="text-4xl  poppins-bold text-rose mb-4 text-center">
+        Kontakt og bestill
+      </h1>
+      <p className="text-gray-500 text-base mb-8 pl-4 pr-4 text-center">
+        Ta kontakt for bestilling — Marit svarer så snart hun kan!
+      </p>
 
-        <ul className="space-y-2 text-sm ">
-          <li className="flex items-center space-x-2 m-4">
-            <a
-              href="mailto:marithardeberg@gmail.com"
-              className="hover:bg-cyandark bg-cyan text-base lg:text-lg  poppins-bold  hover:text-white shadow-lg rounded-lg py-2 px-7 text-center flex justify-center transition"
+      <div className="flex flex-col lg:flex-row gap-8 w-full max-w-4xl">
+        {/* Email card */}
+        <div className="flex-1 bg-antiquePink rounded-lg p-8 flex flex-col items-center text-center shadow-sm">
+          {/* Icon circle */}
+          <div className="w-14 h-14 rounded-full bg-rose/10 flex items-center justify-center mb-5">
+            <svg
+              className="w-7 h-7 text-rose"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              viewBox="0 0 24 24"
             >
-              marithardeberg@gmail.com
-            </a>
-          </li>
-          {/* <li className="flex items-center space-x-2">
-            <span>+47 900 00 000</span>
-          </li> */}
-        </ul>
-        <p className="text-gray text-base   text-center pt-4 ">
-          (Et nytt vindu vil åpne der du kan skrive en mail med dine ønsker
-          eller andre spørsmål)
-        </p>
-        <p className=" text-lg  rounded-full  text-center p-4 mt-4  homemade-apple-regular-skinny ">
-          Husk å si ifra om bøkene skal bli signert og/eller inkludere en
-          hyggelig melding! ❤️
-        </p>
-      </div>
-      <div className="flex flex-col justify-center items-center max-w-130 lg:mt-4 pt-4 lg:pt-12 ml-4 mr-4 ">
-        <h2 className="poppins-bold text-lg">
-          Følg med på "Engler, Hjerter og Sommerfugler" på Facebook{" "}
-        </h2>
-        <p className="p-4 poppins-regular">
-          Her kan du også kontakte Marit for bestilling. Klikk{" "}
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0L12 13.5 2.25 6.75"
+              />
+            </svg>
+          </div>
+
+          <h2 className="text-xl poppins-bold text-rose mb-2">Send en mail</h2>
+          <p className="text-gray-600 text-sm mb-4">
+            For bestilling og spørsmål — klikk knappen under:
+          </p>
+
+          <a
+            href="mailto:marithardeberg@gmail.com"
+            className="btn-base btn-small"
+          >
+            marithardeberg@gmail.com
+          </a>
+
+          <p className="text-gray-400 text-xs mt-4 leading-relaxed">
+            Et nytt vindu åpnes der du kan skrive med dine ønsker eller
+            spørsmål.
+          </p>
+
+          {/* Divider */}
+          <div className="w-full border-t border-rose/20 my-6" />
+
+          <p className="homemade-apple-regular-skinny text-base text-gray-700 leading-relaxed">
+            Husk å si ifra om bøkene skal bli signert og/eller inkludere en
+            hyggelig melding! ❤️
+          </p>
+        </div>
+
+        {/* Facebook card */}
+        <div className="flex-1 bg-antiquePink rounded-lg pt-8 flex flex-col items-center text-center shadow-sm">
+          {/* Icon circle */}
+          <div className="w-14 h-14 rounded-full bg-rose/10 flex items-center justify-center mb-5">
+            <svg
+              className="w-7 h-7 text-rose"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+            </svg>
+          </div>
+
+          <h2 className="text-xl poppins-bold text-rose mb-2">Facebook</h2>
+          <p className="text-gray-600 text-sm pl-4 pr-4 mb-4">
+            Følg med på{" "}
+            <span className="poppins-bold text-gray-700">
+              "Engler, Hjerter og Sommerfugler"
+            </span>{" "}
+            på Facebook — du kan også sende bestilling der.
+          </p>
+
           <a
             href="https://www.facebook.com/engleroghjerter"
-            className="text-rose poppins-bold"
+            target="_blank"
+            rel="noreferrer"
+            className="btn-descret btn-small mb-4"
           >
-            HER
-          </a>{" "}
-          for å gå til facebook-siden eller kopier lenken:
-          facebook.com/engleroghjerter{" "}
-        </p>
-        <img
-          src={fbgruppe}
-          alt="facebook-gruppe"
-          className="bg-white rounded-lg w-70 mb-12"
-        ></img>
-        {/* <img
-        src={ehs}
-        alt="facebook-gruppe"
-        className="bg-white rounded-full"
-      ></img> */}
+            Gå til Facebook-siden →
+          </a>
+          <p className="text-gray-400 text-base mb-6">
+            facebook.com/engleroghjerter
+          </p>
+
+          <img
+            src={fbgruppe}
+            alt="Facebook-gruppen til Marit"
+            className="rounded-lg w-full max-h-40 object-cover mask-t-from-50% shadow-sm"
+          />
+        </div>
       </div>
     </div>
   );

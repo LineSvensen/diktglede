@@ -50,6 +50,22 @@ export default function Footer() {
                 Kontakt og bestill
               </Link>
             </li>
+            <li>
+              <Link
+                to="/presse"
+                className="hover:text-[#ae295a] transition-colors"
+              >
+                Presse
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/handmade"
+                className="hover:text-[#ae295a] transition-colors"
+              >
+                Diktgaver
+              </Link>
+            </li>
           </ul>
         </div>
 

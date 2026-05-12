@@ -3,11 +3,13 @@ import { client, urlFor } from "../../sanityClient";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
+import Loader from "../../Components/Loader/loader";
 
 export default function Handmade() {
   const [items, setItems] = useState([]);
 
   const [popup, setPopup] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     client
@@ -23,10 +25,13 @@ export default function Handmade() {
       )
       .then((data) => {
         if (data?.item) setItems(data.item);
+        setLoading(false);
       });
   }, []);
 
-  if (!items.length) return <p className="text-center mt-12">Laster...</p>;
+  if (loading && !items.length) {
+    return <Loader />;
+  }
 
   const closePopup = () => setPopup(null);
 

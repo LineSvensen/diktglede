@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { client, urlFor } from "../../sanityClient";
+import Loader from "../../Components/Loader/loader";
 
 export default function Presse() {
   const [presse, setPresse] = useState(null);
   const [selectedImg, setSelectedImg] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     client
@@ -19,11 +21,19 @@ export default function Presse() {
         }`,
       )
       .then((data) => {
+        console.log("data:", data);
         setPresse(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("fetch failed:", err);
+        setLoading(false);
       });
   }, []);
 
-  if (!presse) return <p>Laster...</p>;
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="mx-auto p-4 sm:p-8 flex flex-col justify-center items-center text-black bg-antiquePink pb-8 poppins-regular">

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import deal from "../../assets/deal.png";
-import blueDots from "../../assets/scratch.png";
-import allBooksOne from "../../assets/abfour.png";
+// import deal from "../../assets/deal.png";
+import blueDots from "../../assets/scratch.webp";
+import allBooksOne from "../../assets/abfour.webp";
 
 export default function HeroSlide2() {
   return (

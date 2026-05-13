@@ -3,8 +3,8 @@ import Loader from "../../Components/Loader/loader";
 import HeroCarousel from "../../Components/HeroCarousel";
 import ProductCard from "../../Components/ProductCard";
 import { client } from "../../sanityClient";
-import roseTwo from "../../assets/rose-e.png";
-import roseThree from "../../assets/rose-g.png";
+import roseTwo from "../../assets/rose-e.webp";
+import roseThree from "../../assets/rose-g.webp";
 
 export default function Hjem() {
   const [dataLoaded, setDataLoaded] = useState(false);

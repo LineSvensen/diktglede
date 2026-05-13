@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import heroMobile from "../../assets/hero-mobile.png";
-import bgHero from "../../assets/bg-hero.png";
-import maritina from "../../assets/maritina.png";
+import heroMobile from "../../assets/hero-mobile.webp";
+import bgHero from "../../assets/bg-hero.webp";
+import maritina from "../../assets/maritina.webp";
 
 export default function HeroSlide1() {
   return (

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import newBookImg from "../../assets/nyshine2.png";
-import bgToSlide from "../../assets/bgcartoon.png";
+import newBookImg from "../../assets/nyshine2.webp";
+import bgToSlide from "../../assets/bgcartoon.webp";
 
 export default function HeroSlide3() {
   return (

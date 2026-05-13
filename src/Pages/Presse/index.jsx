@@ -3,26 +3,29 @@ import { client, urlFor } from "../../sanityClient";
 import Loader from "../../Components/Loader/loader";
 
 export default function Presse() {
-  const [presse, setPresse] = useState(null);
+  const [presse, setPresse] = useState([]);
   const [selectedImg, setSelectedImg] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     client
       .fetch(
-        `*[_type == "presse"][0]{
-          seksjoner[]{
-            title,
-            description,
-            type,
-            images[]{ asset, alt },
-            videos[]{ asset-> }
-          }
-        }`,
+        `*[_type == "presse"] | order(_createdAt desc) {
+        title,
+        description,
+        type,
+        images[]{
+          asset,
+          alt
+        },
+        videos[]{
+          asset->
+        }
+      }`,
       )
       .then((data) => {
         console.log("data:", data);
-        setPresse(data);
+        setPresse(data || []);
         setLoading(false);
       })
       .catch((err) => {
@@ -36,15 +39,15 @@ export default function Presse() {
   }
 
   return (
-    <div className="mx-auto p-4 sm:p-8 flex flex-col justify-center items-center text-black bg-antiquePink pb-8 poppins-regular">
+    <div className="mx-auto p-4 sm:p-8 flex flex-col  justify-center items-center text-black bg-antiquePink pb-8 poppins-regular">
       <h1 className="text-3xl sm:text-4xl font-bold poppins-bold text-rose mb-4">
         Presse
       </h1>
 
-      {presse.seksjoner?.map((section, i) => (
+      {presse.map((section, i) => (
         <div
           key={i}
-          className="flex flex-col items-center w-full max-w-7xl mb-8"
+          className="flex flex-col   items-center w-full max-w-7xl mb-8"
         >
           <h2 className="p-4 text-2xl mt-4 mb-2">{section.title}</h2>
           {section.description && (
@@ -66,14 +69,14 @@ export default function Presse() {
           )}
 
           {section.type === "bilder" && (
-            <div className="masonry w-full">
+            <div className="masonry w-full ">
               {section.images?.map((img, j) => (
                 <img
                   key={j}
                   src={urlFor(img).url()}
                   alt={img.alt || ""}
                   onClick={() => setSelectedImg(img)}
-                  className="w-full rounded-xl mb-3 break-inside-avoid cursor-pointer hover:opacity-90 transition-opacity"
+                  className="w-full rounded-xl mb-3 break-inside-avoid cursor-pointer hover:opacity-90 transition-opacity "
                 />
               ))}
             </div>

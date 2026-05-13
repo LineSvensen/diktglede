@@ -8,7 +8,7 @@ import EnkeltProdukt from "./Pages/Diktboker/EnkeltProdukt";
 import Kontakt from "./Pages/Kontakt";
 import Kundeomtaler from "./Pages/Kundeomtaler";
 import Presse from "./Pages/Presse";
-import Handmade from "./Pages/Handmade";
+import Handmade from "./Pages/Diktgaver";
 
 function App() {
   return (

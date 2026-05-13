@@ -14,17 +14,15 @@ export default function Handmade() {
   useEffect(() => {
     client
       .fetch(
-        `*[_type == "handmade"][0]{
-          item[]{
-            title,
-            description,
-            price,
-            images[]{ asset }
-          }
-        }`,
+        `*[_type == "handmade"] | order(_createdAt desc) {
+        title,
+        description,
+        price,
+        images[]{ asset }
+      }`,
       )
       .then((data) => {
-        if (data?.item) setItems(data.item);
+        setItems(data || []);
         setLoading(false);
       });
   }, []);
@@ -88,20 +86,20 @@ export default function Handmade() {
           <img
             src={urlFor(popup.images[popup.index]).url()}
             alt=""
-            className="max-w-full max-h-full rounded-xl object-contain"
+            className="max-w-full max-h-full rounded-lg object-contain"
           />
 
           {popup.images.length > 1 && (
             <>
               <button
                 onClick={popupPrev}
-                className="absolute cursor-pointer lg:left-60 left-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-white/40 text-white text-3xl rounded-full w-10 h-10 flex items-center justify-center transition-colors"
+                className="absolute cursor-pointer lg:left-60 left-4 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white  text-rose text-3xl rounded-full w-10 h-10 flex items-center justify-center transition-colors"
               >
                 <IoIosArrowBack />
               </button>
               <button
                 onClick={popupNext}
-                className="absolute  cursor-pointer lg:right-60 right-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-white/40 text-white text-3xl rounded-full w-10 h-10 flex items-center justify-center transition-colors"
+                className="absolute  cursor-pointer lg:right-60 right-4 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-white  text-rose text-3xl rounded-full w-10 h-10 flex items-center justify-center transition-colors"
               >
                 <IoIosArrowForward />
               </button>
@@ -149,27 +147,27 @@ function ProductCard({ item, onImageClick }) {
   return (
     <div className="bg-white rounded-lg text-black shadow-md overflow-hidden flex flex-col h-full">
       {/* Fixed-size image area */}
-      <div className="relative w-full h-100 bg-white p-2 flex-shrink-0 ">
+      <div className="relative w-full h-100  bg-white p-2 flex-shrink-0 ">
         {images.length > 0 ? (
           <>
             <img
               src={urlFor(images[currentIndex]).width(600).url()}
               alt={item.title || ""}
               onClick={() => onImageClick(images, currentIndex)}
-              className="w-full h-full object-contain  cursor-pointer hover:opacity-95 transition-opacity"
+              className="w-full h-full   object-cover rounded-lg cursor-pointer hover:opacity-95 transition-opacity"
             />
 
             {hasMultiple && (
               <>
                 <button
                   onClick={prev}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/30 cursor-pointer hover:bg-black text-white rounded-full w-8 h-8 flex items-center justify-center shadow transition-colors"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 cursor-pointer hover:bg-rose/10 text-rose rounded-full w-6 h-6 flex items-center justify-center shadow transition-colors"
                 >
                   <IoIosArrowBack />
                 </button>
                 <button
                   onClick={next}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/30 cursor-pointer hover:bg-black text-white rounded-full w-8 h-8 flex items-center justify-center shadow transition-colors"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 cursor-pointer hover:bg-rose/10 text-rose rounded-full w-6 h-6 flex items-center justify-center shadow transition-colors"
                 >
                   <IoIosArrowForward />
                 </button>

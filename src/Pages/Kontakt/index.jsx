@@ -13,7 +13,7 @@ export default function Kontakt() {
   if (loading) return <Loader />;
 
   return (
-    <div className="min-h-screen bg-palepink poppins-regular flex flex-col items-center px-4 py-16 text-black">
+    <div className="min-h-screen bg-palepink poppins-regular flex flex-col items-center   px-4 py-16 text-black">
       {/* Page title */}
       <h1 className="text-4xl  poppins-bold text-rose mb-4 text-center">
         Kontakt og bestill
@@ -22,9 +22,9 @@ export default function Kontakt() {
         Ta kontakt for bestilling — Marit svarer så snart hun kan!
       </p>
 
-      <div className="flex flex-col lg:flex-row gap-8 w-full max-w-4xl">
+      <div className="flex flex-col lg:flex-row items-center  justify-center gap-8 w-full ">
         {/* Email card */}
-        <div className="flex-1 bg-antiquePink rounded-lg p-8 flex flex-col items-center text-center shadow-sm">
+        <div className="flex-1 bg-antiquePink max-w-2xl rounded-lg p-8 lg:pb-24 lg:pt-12 lg:px-20 flex flex-col items-center text-center shadow-sm">
           {/* Icon circle */}
           <div className="w-14 h-14 rounded-full bg-rose/10 flex items-center justify-center mb-5">
             <svg
@@ -69,7 +69,7 @@ export default function Kontakt() {
         </div>
 
         {/* Facebook card */}
-        <div className="flex-1 bg-antiquePink rounded-lg pt-8 flex flex-col items-center text-center shadow-sm">
+        <div className="flex-1 max-w-md    rounded-lg pt-8 flex flex-col items-center text-center border border-rose ">
           {/* Icon circle */}
           <div className="w-14 h-14 rounded-full bg-rose/10 flex items-center justify-center mb-5">
             <svg

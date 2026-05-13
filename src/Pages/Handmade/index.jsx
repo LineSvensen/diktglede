@@ -49,11 +49,11 @@ export default function Handmade() {
   };
 
   return (
-    <div className="mx-auto p-4 sm:p-8 flex flex-col items-center bg-antiquePink min-h-screen poppins-regular">
+    <div className="mx-auto p-4 sm:p-8 flex flex-col items-center bg-antiquePink text-black min-h-screen poppins-regular">
       <h1 className="text-3xl sm:text-4xl font-bold poppins-bold text-rose mb-4">
         Diktgaver
       </h1>
-      <p className="text-center pb-8 lg:max-w-1/2">
+      <p className="text-center  text-black pb-8 lg:max-w-1/2">
         Håndlagde ting med dikt på - alt laget av Marit. Mange av tingene er
         gjenbruk av treverk som har fått nye liv. Diktene er fra Marits bøker.
         Kontakt Marit dersom du ønsker å bestille ❤️
@@ -147,7 +147,7 @@ function ProductCard({ item, onImageClick }) {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full">
+    <div className="bg-white rounded-lg text-black shadow-md overflow-hidden flex flex-col h-full">
       {/* Fixed-size image area */}
       <div className="relative w-full h-100 bg-white p-2 flex-shrink-0 ">
         {images.length > 0 ? (
@@ -201,7 +201,7 @@ function ProductCard({ item, onImageClick }) {
 
       {/* Card info — fixed height so cards stay uniform */}
       <div className="p-4 flex flex-col gap-2 h-36">
-        <h2 className="text-lg font-semibold poppins-bold text-gray-800 line-clamp-1">
+        <h2 className="text-lg font-semibold poppins-bold  line-clamp-1">
           {item.title}
         </h2>
         {item.description && (

@@ -23,11 +23,26 @@ export default function MobileMenu({
     fetchBooks();
   }, []);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <div
       ref={mobileMenuRef}
       className={`fixed top-0 right-0 w-64 bg-white z-50 poppins-regular transform transition-transform duration-300 ease-in-out
-  h-[100dvh] max-h-[100dvh] overflow-hidden
+  h-[100dvh] max-h-[100dvh] overscroll-contain overflow-hidden
   ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
     >
       {/* <div
@@ -37,11 +52,13 @@ export default function MobileMenu({
       }`}
     ></div> */}
 
-      <div className="flex justify-between items-center p-4 border-b border-[#d63772]">
-        <span className="text-lg font-semibold text-[#d63772]">Meny</span>
+      <div className="flex justify-between items-center p-4 shadow border-rose">
+        <span className="text-lg font-semibold text-rose poppins-bold">
+          Meny
+        </span>
         <button
           onClick={() => setMobileMenuOpen(false)}
-          className="text-[#d63772] hover:text-gray-900"
+          className="text-rose hover:text-rosedark"
         >
           <X className="w-10 h-10 cursor-pointer" />
         </button>
@@ -49,14 +66,14 @@ export default function MobileMenu({
 
       {/* <nav className="flex flex-col p-4 space-y-3 poppins-regular text-[#d63772] "> */}
       <nav
-        className="flex flex-col p-4 space-y-3 poppins-regular text-[#d63772]
+        className="mobile-menu-scroll  flex flex-col p-4 space-y-3 poppins-regular text-rose
   overflow-y-auto
   h-[calc(100dvh-73px)]
   pb-[calc(2rem+env(safe-area-inset-bottom))]"
       >
         <NavLink
           to="/"
-          className="hover:text-[#367268] font-semibold"
+          className="hover:text-rosedark poppins-bold"
           end
           onClick={() => setMobileMenuOpen(false)}
         >
@@ -65,54 +82,53 @@ export default function MobileMenu({
 
         <NavLink
           to="/om-meg"
-          className="hover:text-[#367268] font-semibold"
+          className="hover:text-rosedark poppins-bold"
           onClick={() => setMobileMenuOpen(false)}
         >
           Om Marit
         </NavLink>
         <NavLink
           to="/kontakt"
-          className="hover:text-[#367268] font-semibold"
+          className="hover:text-rosedark poppins-bold"
           onClick={() => setMobileMenuOpen(false)}
         >
           Kontakt og bestill
         </NavLink>
         <NavLink
           to="/kundeomtaler"
-          className="hover:text-[#367268] font-semibold"
+          className="hover:text-rosedark poppins-bold"
           onClick={() => setMobileMenuOpen(false)}
         >
           Kundeomtaler
         </NavLink>
         <NavLink
           to="/presse"
-          className="hover:text-[#367268] font-semibold"
+          className="hover:text-rosedark poppins-bold"
           onClick={() => setMobileMenuOpen(false)}
         >
           Presse
         </NavLink>
         <NavLink
           to="/handmade"
-          className="hover:text-[#367268] font-semibold"
+          className="hover:text-rosedark poppins-bold"
           onClick={() => setMobileMenuOpen(false)}
         >
           Diktgaver
         </NavLink>
         <div className="flex flex-col space-y-1">
-          <span className="poppins-semibold  pb-2">Diktbøker</span>
           <Link
             to="/diktboker"
             onClick={() => setMobileMenuOpen(false)}
-            className="pl-3 text-gray-600 hover:text-rose    text-md"
+            className="poppins-bold hover:text-rosedark  "
           >
-            Vis alle
+            Diktbøker
           </Link>
           {books.map((book) => (
             <Link
               key={book.slug}
               to={`/diktboker/${book.slug}`}
               onClick={() => setMobileMenuOpen(false)}
-              className="pl-3 text-[#367268] hover:text-rose  text-md p-1"
+              className="pl-3 text-black hover:text-rose  text-md p-1"
             >
               {book.title}
             </Link>

@@ -26,10 +26,17 @@ export default function MobileMenu({
   return (
     <div
       ref={mobileMenuRef}
+      className={`fixed top-0 right-0 w-64 bg-white z-50 poppins-regular transform transition-transform duration-300 ease-in-out
+  h-[100dvh] max-h-[100dvh] overflow-hidden
+  ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+    >
+      {/* <div
+      ref={mobileMenuRef}
       className={`fixed top-0 right-0 h-full w-64 bg-white  z-50 poppins-regular transform transition-transform duration-300 ease-in-out ${
         mobileMenuOpen ? "translate-x-0" : "translate-x-full"
       }`}
-    >
+    ></div> */}
+
       <div className="flex justify-between items-center p-4 border-b border-[#d63772]">
         <span className="text-lg font-semibold text-[#d63772]">Meny</span>
         <button
@@ -40,7 +47,13 @@ export default function MobileMenu({
         </button>
       </div>
 
-      <nav className="flex flex-col p-4 space-y-3 poppins-regular text-[#d63772] ">
+      {/* <nav className="flex flex-col p-4 space-y-3 poppins-regular text-[#d63772] "> */}
+      <nav
+        className="flex flex-col p-4 space-y-3 poppins-regular text-[#d63772]
+  overflow-y-auto
+  h-[calc(100dvh-73px)]
+  pb-[calc(2rem+env(safe-area-inset-bottom))]"
+      >
         <NavLink
           to="/"
           className="hover:text-[#367268] font-semibold"
@@ -90,7 +103,7 @@ export default function MobileMenu({
           <Link
             to="/diktboker"
             onClick={() => setMobileMenuOpen(false)}
-            className="pl-3 text-gray-600 hover:text-[#d63772]    text-md"
+            className="pl-3 text-gray-600 hover:text-rose    text-md"
           >
             Vis alle
           </Link>
@@ -99,7 +112,7 @@ export default function MobileMenu({
               key={book.slug}
               to={`/diktboker/${book.slug}`}
               onClick={() => setMobileMenuOpen(false)}
-              className="pl-3 text-[#367268] hover:text-[#d63772]  ext-md p-1"
+              className="pl-3 text-[#367268] hover:text-rose  text-md p-1"
             >
               {book.title}
             </Link>

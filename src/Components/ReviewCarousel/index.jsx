@@ -24,8 +24,8 @@ const ReviewCarousel = ({
       // Mobile (under 640px) - mindre tekst
       if (textLength > 350) return "text-base";
       if (textLength > 250) return "text-base"; // 12px
-      if (textLength > 150) return "text-base"; // 14px
-      if (textLength > 80) return "text-base"; // 16px
+      if (textLength > 150) return "text-lg"; // 14px
+      if (textLength > 80) return "text-2xl"; // 16px
       return "text-lg"; // 18px
     } else {
       // Desktop (over 768px)
@@ -178,7 +178,7 @@ const ReviewCarousel = ({
   return (
     <div className="relative w-full max-w-4xl mx-auto">
       {/* FAST HØYDE - lavere på mobil */}
-      <div className="relative overflow-hidden rounded-2xl bg-white border-1 border-gray-100 shadow-xl h-[380px] sm:h-[400px] ">
+      <div className="relative overflow-hidden rounded-2xl bg-white border-1 border-gray-100 shadow-xl h-[500px] sm:h-[400px] ">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={currentIndex}

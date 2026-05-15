@@ -1,60 +1,23 @@
 import { useEffect, useState } from "react";
-import { client, urlFor } from "../../sanityClient";
-import { Link } from "react-router-dom";
+import BookList from "../../Components/BookList";
+import Loader from "../../Components/Loader/loader";
 
 export default function Diktboker() {
-  const [books, setBooks] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchBooks = async () => {
-      const data = await client.fetch(`*[_type == "book"] | order(year desc) {
-        _id,
-        title,
-        slug,
-        shortDescription,
-        year,
-        price,
-        isBundle,
-        "coverUrl": cover.asset->url
-      }`);
-      setBooks(data);
-    };
-    fetchBooks();
+    const timer = setTimeout(() => setLoading(false), 800);
+    return () => clearTimeout(timer);
   }, []);
 
+  if (loading) return <Loader />;
   return (
-    <div className="max-w-6xl mx-auto p-6">
-      <h1 className="text-3xl font-semibold mb-6">Diktbøker</h1>
+    <div className="max-w-7xl mx-auto p-6">
+      <h1 className="text-3xl poppins-bold text-rose mb-6 pl-4">
+        Alle diktbøker
+      </h1>
 
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 cursor-pointer">
-        {books.map((book) => (
-          <Link
-            key={book._id}
-            to={`/diktboker/${book.slug.current}`}
-            className="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden block"
-          >
-            {book.coverUrl && (
-              <img
-                src={urlFor(book.coverUrl).width(500).url()}
-                alt={book.title}
-                className="w-full h-64 object-cover"
-              />
-            )}
-            <div className="p-4">
-              <h2 className="text-xl font-bold mb-2">{book.title}</h2>
-              <p className="text-gray-600 text-sm mb-3">
-                {book.shortDescription}
-              </p>
-              <p className="text-gray-800 font-medium">
-                {book.price ? `${book.price} kr` : ""}
-              </p>
-              {book.year && (
-                <p className="text-gray-500 text-sm">Utgitt: {book.year}</p>
-              )}
-            </div>
-          </Link>
-        ))}
-      </div>
+      <BookList />
     </div>
   );
 }

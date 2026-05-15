@@ -13,8 +13,9 @@ export default function MobileMenu({
   useEffect(() => {
     const fetchBooks = async () => {
       const data = await client.fetch(
-        `*[_type == "book"] | order(title asc) {
+        `*[_type == "book"] | order(year asc) {
           title,
+          year,
           "slug": slug.current
         }`,
       );

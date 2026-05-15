@@ -40,7 +40,7 @@ export default function Presse() {
 
   return (
     <div className="mx-auto p-4 sm:p-8 flex flex-col  justify-center items-center text-black bg-antiquePink pb-8 poppins-regular">
-      <h1 className="text-3xl sm:text-4xl font-bold poppins-bold text-rose mb-4">
+      <h1 className="text-3xl sm:text-4xl font-bold poppins-bold text-rose  ">
         Presse
       </h1>
 
@@ -49,13 +49,15 @@ export default function Presse() {
           key={i}
           className="flex flex-col   items-center w-full max-w-7xl mb-8"
         >
-          <h2 className="p-4 text-2xl mt-4 mb-2">{section.title}</h2>
+          <h2 className="py-2  text-2xl mt-2 ">{section.title}</h2>
           {section.description && (
-            <p className="text-center mb-4 max-w-2xl">{section.description}</p>
+            <p className="text-center pb-2 mb-2 max-w-2xl">
+              {section.description}
+            </p>
           )}
 
           {section.type === "video" && (
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 mt-2">
               {section.videos?.map((vid, j) => (
                 <video
                   key={j}
@@ -69,7 +71,7 @@ export default function Presse() {
           )}
 
           {section.type === "bilder" && (
-            <div className="masonry w-full ">
+            <div className="masonry w-full mt-3 mb-2">
               {section.images?.map((img, j) => (
                 <img
                   key={j}

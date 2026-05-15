@@ -196,24 +196,28 @@ export default function EnkeltProdukt() {
                 {isBundle ? "Bokpakke" : "Diktbok"}
               </div> */}
 
-              <h1 className="text-4xl pb-4 poppins-bold text-blackdark">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl pb-4 poppins-bold text-blackdark">
                 {book.title}
               </h1>
 
               {!isBundle && book.year && (
-                <div className=" inline-flex items-center rounded-full font-medium pb-2 text-base  uppercase tracking-[0.18em] text-rose ">
+                <div className=" inline-flex items-center rounded-full font-medium pb-2 text-lg  uppercase tracking-[0.18em] text-rose ">
                   <p className=" ">Utgivelsesår: {book.year}</p>
                 </div>
               )}
 
-              <div className="mt-4 flex  flex-wrap gap-3">
+              <div className="mt-2 flex  flex-wrap gap-6">
                 {book.price && (
-                  <div className="flex flex-row text-center items-center gap-2 rounded-lg border  border-zinc-200 bg-white px-4 py-3 shadow-sm ">
-                    <p className="text-base uppercase tracking-[0.18em] text-gray">
-                      Pris
-                    </p>
-                    <p className=" text-lg font-medium text-black">
-                      {book.price} kr
+                  <div className="flex flex-row text-center items-center   rounded-lg    py-3   ">
+                    <p className="text-base uppercase tracking-[0.18em] text-gray"></p>
+                    <Link
+                      to="/kontakt"
+                      className="btn-base btn-large poppins-medium "
+                    >
+                      Kontakt og bestill nå
+                    </Link>
+                    <p className="text-xl sm:text-2xl font-medium text-black pl-4  ">
+                      {book.price},- kr
                     </p>
                   </div>
                 )}
@@ -223,15 +227,9 @@ export default function EnkeltProdukt() {
                 >
                   Bestill nå
                 </a> */}
-                <Link
-                  to="/kontakt"
-                  className="btn-base btn-large poppins-medium "
-                >
-                  Kontakt og bestill nå
-                </Link>
               </div>
 
-              <div className="mt-8 rounded-lg border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
+              <div className="mt-5 rounded-lg border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
                 <h2 className="text-base uppercase tracking-[0.2em] text-gray mb-4">
                   Kort beskrivelse
                 </h2>

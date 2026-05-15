@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Loader from "../../Components/Loader/loader";
 import fbgruppe from "../../assets/maritfb2.png";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 export default function Kontakt() {
   const [loading, setLoading] = useState(true);
@@ -94,9 +95,9 @@ export default function Kontakt() {
             href="https://www.facebook.com/engleroghjerter"
             target="_blank"
             rel="noreferrer"
-            className="btn-descret btn-small mb-4"
+            className="btn-descret btn-small mb-4 flex flex-row items-center text-center justify-center gap-1"
           >
-            Gå til Facebook-siden →
+            Gå til Facebook-siden <FaLongArrowAltRight />
           </a>
           <p className="text-gray-400 text-base mb-6">
             facebook.com/engleroghjerter

@@ -161,15 +161,36 @@ function ProductCard({ item, onImageClick }) {
               <>
                 <button
                   onClick={prev}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 cursor-pointer hover:bg-rose/10 text-rose rounded-full w-6 h-6 flex items-center justify-center shadow transition-colors"
+                  aria-label="Forrige bilde"
+                  className="
+    absolute left-3 top-1/2 -translate-y-1/2
+    bg-white text-rose
+    rounded-full w-9 h-9
+    flex items-center justify-center
+    shadow-md z-10
+    active:bg-rose/10
+    transition-colors
+    cursor-pointer
+  "
                 >
-                  <IoIosArrowBack />
+                  <IoIosArrowBack className="text-2xl" />
                 </button>
+
                 <button
                   onClick={next}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 cursor-pointer hover:bg-rose/10 text-rose rounded-full w-6 h-6 flex items-center justify-center shadow transition-colors"
+                  aria-label="Neste bilde"
+                  className="
+    absolute right-3 top-1/2 -translate-y-1/2
+    bg-white text-rose
+    rounded-full w-9 h-9
+    flex items-center justify-center
+    shadow-md z-10
+    active:bg-rose/10
+    transition-colors
+    cursor-pointer
+  "
                 >
-                  <IoIosArrowForward />
+                  <IoIosArrowForward className="text-2xl" />
                 </button>
 
                 {/* Dots */}
@@ -181,8 +202,8 @@ function ProductCard({ item, onImageClick }) {
                         e.stopPropagation();
                         setCurrentIndex(idx);
                       }}
-                      className={`w-2 h-2 rounded-full cursor-pointer transition-colors  ${
-                        idx === currentIndex ? "bg-white" : "bg-white/50"
+                      className={`w-2 h-2 rounded-full cursor-pointer transition-colors shadow ${
+                        idx === currentIndex ? "bg-rose" : "bg-white/80"
                       }`}
                     />
                   ))}

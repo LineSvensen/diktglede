@@ -15,9 +15,9 @@ export default function BackButton({ fallbackTo = "/" }) {
     <button
       type="button"
       onClick={handleBack}
-      className=" bg-white/40 py-2 px-4 rounded-lg shadow inline-flex items-center gap-2 text-base  text-[#d63772] hover:text-pink-800 transition-colors mb-8 cursor-pointer"
+      className="  sm:border bg-white/50 sm:bg-transparent border-rose sm:py-1   sm:px-4 rounded-full  shadow inline-flex items-center gap-2 text-center text-base  text-rose hover:text-rosedark transition-colors mb-3 sm:mb-8 cursor-pointer"
     >
-      <IoIosArrowDropleftCircle className="text-4xl sm:text-3xl" />
+      <IoIosArrowDropleftCircle className="text-3xl sm:text-3xl " />
       <span className="hidden sm:inline poppins-regular ">Tilbake</span>
     </button>
   );

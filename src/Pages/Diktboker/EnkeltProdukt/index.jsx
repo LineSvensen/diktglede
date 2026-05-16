@@ -130,7 +130,7 @@ export default function EnkeltProdukt() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#f7c2d1] via-white to-[#ffffff] text-zinc-900">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 sm:py-12">
         {/* <Link
           to="/"
           className="bg-white/40 py-2 px-4 rounded-lg shadow inline-flex items-center gap-2 text-base  text-[#d63772] hover:text-pink-800 transition-colors mb-8 "
@@ -143,7 +143,7 @@ export default function EnkeltProdukt() {
 
         <BackButton />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-7 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-10 xl:gap-7 items-start">
           <section className="lg:col-span-6 xl:col-span-7">
             <div className="lg:sticky lg:top-8">
               <div className="rounded-lg backdrop-blur overflow-hidden">
@@ -190,13 +190,13 @@ export default function EnkeltProdukt() {
             </div>
           </section>
 
-          <section className="lg:col-span-6 xl:col-span-5">
+          <section className="  lg:col-span-6 xl:col-span-5">
             <div className="max-w-7xl">
               {/* <div className="inline-flex items-center rounded-full border border-[#e8ddd3] bg-[#fff8f2] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-[#9a6b4f] mb-5">
                 {isBundle ? "Bokpakke" : "Diktbok"}
               </div> */}
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl pb-4 poppins-bold text-blackdark">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl pb-2 sm:pb-4 poppins-bold text-blackdark">
                 {book.title}
               </h1>
 
@@ -206,7 +206,7 @@ export default function EnkeltProdukt() {
                 </div>
               )}
 
-              <div className="mt-2 flex  flex-wrap gap-6">
+              <div className=" sm:mt-2  flex  flex-wrap gap-6">
                 {book.price && (
                   <div className="flex flex-row text-center items-center   rounded-lg    py-3   ">
                     <p className="text-base uppercase tracking-[0.18em] text-gray"></p>
@@ -229,7 +229,7 @@ export default function EnkeltProdukt() {
                 </a> */}
               </div>
 
-              <div className="mt-5 rounded-lg border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
+              <div className="mt-2 sm:mt-5 rounded-lg border border-zinc-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
                 <h2 className="text-base uppercase tracking-[0.2em] text-gray mb-4">
                   Kort beskrivelse
                 </h2>

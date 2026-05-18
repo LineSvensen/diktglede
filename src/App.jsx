@@ -9,6 +9,7 @@ import Kontakt from "./Pages/Kontakt";
 import Kundeomtaler from "./Pages/Kundeomtaler";
 import Presse from "./Pages/Presse";
 import Handmade from "./Pages/Diktgaver";
+import NotFound from "./Pages/NotFound";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="kundeomtaler" element={<Kundeomtaler />} />
           <Route path="presse" element={<Presse />} />
           <Route path="handmade" element={<Handmade />} />
+          <Route path="NotFound" element={<NotFound />} />
         </Route>
       </Routes>
     </>

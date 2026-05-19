@@ -10,6 +10,7 @@ import Kundeomtaler from "./Pages/Kundeomtaler";
 import Presse from "./Pages/Presse";
 import Handmade from "./Pages/Diktgaver";
 import NotFound from "./Pages/NotFound";
+import Personvern from "./Pages/Personvern";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="presse" element={<Presse />} />
           <Route path="handmade" element={<Handmade />} />
           <Route path="NotFound" element={<NotFound />} />
+          <Route path="personvern" element={<Personvern />} />
         </Route>
       </Routes>
     </>

@@ -66,6 +66,14 @@ export default function Footer() {
                 Diktgaver
               </Link>
             </li>
+            <li>
+              <Link
+                to="/personvern"
+                className="hover:text-[#ae295a] transition-colors"
+              >
+                Personvern
+              </Link>
+            </li>
           </ul>
         </div>
 

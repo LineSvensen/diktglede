@@ -45,7 +45,8 @@ export default function Kontakt() {
 
           <h2 className="text-xl poppins-bold text-rose mb-2">Send en mail</h2>
           <p className="text-gray-600 text-sm mb-4">
-            For bestilling og spørsmål — klikk knappen under:
+            For bestilling og spørsmål — klikk knappen under. Et nytt vindu
+            åpnes der du kan skrive med dine ønsker eller spørsmål.
           </p>
 
           <a
@@ -55,9 +56,9 @@ export default function Kontakt() {
             marithardeberg@gmail.com
           </a>
 
-          <p className="text-gray-400 text-xs mt-4 leading-relaxed">
-            Et nytt vindu åpnes der du kan skrive med dine ønsker eller
-            spørsmål.
+          <p className="text-gray-600 text-sm  mt-4 pt-2">
+            {" "}
+            Eller kontakt på tlf 97 69 1667
           </p>
 
           {/* Divider */}

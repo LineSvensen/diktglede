@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://diktglede.vercel.app/</loc>
+  </url>
+
+  <url>
+    <loc>https://diktglede.vercel.app/om-meg</loc>
+  </url>
+
+  <url>
+    <loc>https://diktglede.vercel.app/diktboker</loc>
+  </url>
+
+  <url>
+    <loc>https://diktglede.vercel.app/kontakt</loc>
+  </url>
+
+  <url>
+    <loc>https://diktglede.vercel.app/kundeomtaler</loc>
+  </url>
+
+  <url>
+    <loc>https://diktglede.vercel.app/presse</loc>
+  </url>
+
+</urlset>

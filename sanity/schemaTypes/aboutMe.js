@@ -2,6 +2,7 @@ export default {
   name: 'aboutMe',
   title: 'Om meg',
   type: 'document',
+
   fields: [
     {
       name: 'bio',
@@ -9,6 +10,7 @@ export default {
       type: 'text',
       rows: 8,
     },
+
     {
       name: 'image',
       title: 'Hovedbilde',
@@ -22,12 +24,14 @@ export default {
         },
       ],
     },
+
     {
       name: 'moreBio',
       title: 'Mer tekst om meg',
       type: 'text',
       rows: 8,
     },
+
     {
       name: 'imageTwo',
       title: 'Bilde to',
@@ -41,12 +45,14 @@ export default {
         },
       ],
     },
+
     {
       name: 'bioThree',
       title: 'Tekst tre',
       type: 'text',
       rows: 8,
     },
+
     {
       name: 'imageThree',
       title: 'Bilde tre',
@@ -60,12 +66,14 @@ export default {
         },
       ],
     },
+
     {
       name: 'bioFour',
       title: 'Tekst fire',
       type: 'text',
       rows: 8,
     },
+
     {
       name: 'imageFour',
       title: 'Bilde fire',
@@ -79,12 +87,14 @@ export default {
         },
       ],
     },
+
     {
       name: 'bioFive',
       title: 'Tekst fem',
       type: 'text',
       rows: 8,
     },
+
     {
       name: 'imageFive',
       title: 'Bilde fem',
@@ -99,4 +109,19 @@ export default {
       ],
     },
   ],
+
+  preview: {
+    select: {
+      title: 'bio',
+      media: 'image',
+    },
+
+    prepare({title, media}) {
+      return {
+        title: 'Om meg',
+        subtitle: title ? title.slice(0, 80) + '...' : 'Ingen tekst enda',
+        media,
+      }
+    },
+  },
 }

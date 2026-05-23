@@ -26,6 +26,13 @@ export default {
       initialValue: false,
     },
     {
+      name: 'isLimited',
+      title: 'Denne selges kun i bokpakken',
+      type: 'boolean',
+      initialValue: false,
+    },
+
+    {
       name: 'shortDescription',
       title: 'Kort beskrivelse',
       type: 'string',

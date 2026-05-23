@@ -3,6 +3,7 @@ import Loader from "../../Components/Loader/loader";
 import fbgruppe from "../../assets/maritfb2.png";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
+
 export default function Kontakt() {
   const [loading, setLoading] = useState(true);
 
@@ -58,7 +59,7 @@ export default function Kontakt() {
 
           <p className="text-gray-600 text-sm  mt-4 pt-2">
             {" "}
-            Eller kontakt på tlf 97 69 1667
+            Eller kontakt på tlf 97 69 16 67
           </p>
 
           {/* Divider */}

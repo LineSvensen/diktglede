@@ -6,6 +6,8 @@ import BackButton from "../../../Components/BackButton";
 import { IoChevronBackCircleOutline } from "react-icons/io5";
 import { TiChevronLeft } from "react-icons/ti";
 import { PiArrowCircleLeft } from "react-icons/pi";
+import { FaLongArrowAltRight } from "react-icons/fa";
+import { FaInfoCircle } from "react-icons/fa";
 
 import { PiShootingStarBold } from "react-icons/pi";
 {
@@ -79,6 +81,7 @@ export default function EnkeltProdukt() {
       const query = `*[_type == "book" && slug.current == $slug][0]{
   title,
   isBundle,
+  isLimited,
   shortDescription,
   longDescription,
   poem,
@@ -127,6 +130,7 @@ export default function EnkeltProdukt() {
 
   const activeImage = allImages[selectedImage] || book.cover;
   const isBundle = book?.isBundle;
+  const isLimited = book?.isLimited;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#f7c2d1] via-white to-[#ffffff] text-zinc-900">
@@ -210,15 +214,33 @@ export default function EnkeltProdukt() {
                 {book.price && (
                   <div className="flex flex-row text-center items-center   rounded-lg    py-3   ">
                     <p className="text-base uppercase tracking-[0.18em] text-gray"></p>
-                    <Link
-                      to="/kontakt"
-                      className="btn-base btn-large poppins-medium "
-                    >
-                      Kontakt og bestill nå
-                    </Link>
-                    <p className="text-xl sm:text-2xl font-medium text-black pl-4  ">
-                      {book.price},- kr
-                    </p>
+
+                    {isLimited ? (
+                      <>
+                        <Link
+                          to="/diktboker/pakke-med-alle-bokene"
+                          className="btn-base  px-4 py-3 poppins-medium items-center gap-2  "
+                        >
+                          Gå til Bokpakken
+                        </Link>
+                        <p className="pl-4 sm:pl-8 text-sm flex flex-row gap-2 poppins-regular max-w-40 sm:max-w-60 text-left text-black">
+                          <FaInfoCircle className="text-rose text-lg shrink-0" />{" "}
+                          Kjøpes som en del av bokpakken
+                        </p>
+                      </>
+                    ) : (
+                      <>
+                        <Link
+                          to="/kontakt"
+                          className="btn-base btn-large poppins-medium "
+                        >
+                          Kontakt og bestill nå
+                        </Link>
+                        <p className="text-xl sm:text-2xl font-medium text-black pl-4  ">
+                          {book.price},- kr
+                        </p>
+                      </>
+                    )}
                   </div>
                 )}
                 {/* <a

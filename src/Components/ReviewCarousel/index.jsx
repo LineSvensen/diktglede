@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 
 const ReviewCarousel = ({
   reviews,
-  autoPlayInterval = 5000,
+  autoPlayInterval = 12000,
   linearMode = false,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

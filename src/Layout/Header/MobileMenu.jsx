@@ -96,11 +96,11 @@ export default function MobileMenu({
           Kontakt og bestill
         </NavLink>
         <NavLink
-          to="/kundeomtaler"
+          to="/gjestebok"
           className="hover:text-rosedark poppins-bold"
           onClick={() => setMobileMenuOpen(false)}
         >
-          Kundeomtaler
+          Gjestebok
         </NavLink>
         <NavLink
           to="/presse"

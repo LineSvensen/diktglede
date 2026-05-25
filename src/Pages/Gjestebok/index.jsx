@@ -35,7 +35,7 @@ export default function Kundeomtaler() {
     <div className="min-h-screen ">
       <div className="max-w-7xl mx-auto px-4 py-8">
         <h1 className="text-4xl text-rose font-bold mb-12 text-center">
-          Kundeomtaler
+          Gjestebok
         </h1>
         <section className="mb-20 ">
           <ReviewCarousel reviews={reviews} autoPlayInterval={5000} />

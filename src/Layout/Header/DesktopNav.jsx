@@ -32,8 +32,8 @@ export default function DesktopNav({
       <NavLink to="/kontakt" className={linkStyle}>
         Kontakt og bestill
       </NavLink>
-      <NavLink to="/kundeomtaler" className={linkStyle}>
-        Kundeomtaler
+      <NavLink to="/gjestebok" className={linkStyle}>
+        Gjestebok
       </NavLink>
       <NavLink to="/presse" className={linkStyle}>
         Presse

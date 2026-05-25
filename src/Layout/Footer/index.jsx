@@ -52,6 +52,14 @@ export default function Footer() {
             </li>
             <li>
               <Link
+                to="/gjestebok"
+                className="hover:text-[#ae295a] transition-colors"
+              >
+                Gjestebok
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="/presse"
                 className="hover:text-[#ae295a] transition-colors"
               >

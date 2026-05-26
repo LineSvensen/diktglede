@@ -19,5 +19,11 @@ export default {
       type: 'boolean',
       initialValue: false,
     },
+    {
+      name: 'reply',
+      title: 'Svar fra Marit',
+      type: 'text',
+      rows: 3,
+    },
   ],
 }

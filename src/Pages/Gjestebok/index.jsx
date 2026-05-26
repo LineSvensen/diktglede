@@ -10,6 +10,32 @@ export default function Kundeomtaler() {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
 
+  const [guestbookMessages, setGuestbookMessages] = useState([]);
+  const [sending, setSending] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
+
+  async function fetchGuestbookMessages() {
+    const guestbookQuery = `*[_type == "guestbookMessage" && approved == true]
+    | order(_createdAt desc) {
+      _id,
+      name,
+      message,
+      reply,
+      _createdAt
+    }`;
+
+    try {
+      const data = await client.fetch(guestbookQuery);
+      setGuestbookMessages(data);
+    } catch (error) {
+      console.error("Feil ved henting av gjestebok:", error);
+    }
+  }
+
+  useEffect(() => {
+    fetchGuestbookMessages();
+  }, []);
+
   useEffect(() => {
     const query = `*[_type == "testimonial"] | order(date desc) {
       author,
@@ -33,21 +59,39 @@ export default function Kundeomtaler() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    await fetch("/api/guestbook", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name,
-        message,
-      }),
-    });
+    setSending(true);
+    setStatusMessage("");
 
-    setName("");
-    setMessage("");
+    try {
+      const response = await fetch("/api/guestbook", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          message,
+        }),
+      });
 
-    alert("Hilsen sendt!");
+      if (!response.ok) {
+        throw new Error("Kunne ikke sende hilsen");
+      }
+
+      setName("");
+      setMessage("");
+
+      setStatusMessage(
+        "Tusen takk for hilsenen! Den vises når den er godkjent.",
+      );
+
+      await fetchGuestbookMessages();
+    } catch (error) {
+      console.error("Feil ved sending av hilsen:", error);
+      setStatusMessage("Oi! Noe gikk galt. Prøv igjen om litt.");
+    } finally {
+      setSending(false);
+    }
   }
 
   if (loading) {
@@ -65,8 +109,34 @@ export default function Kundeomtaler() {
           <ReviewCarousel reviews={reviews} autoPlayInterval={5000} />
         </section>
 
-        {/* NY GJESTEBOK */}
-        <section className="max-w-2xl mx-auto">
+        <div className="mt-12 space-y-4">
+          {guestbookMessages.map((item) => (
+            <article key={item._id} className="rounded-xl bg-white p-5 shadow">
+              <p className="text-sm text-gray-400 mb-2">
+                {new Date(item._createdAt).toLocaleDateString("no-NO", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </p>
+
+              <p className="mb-3">{item.message}</p>
+
+              <p className="text-sm text-gray-500">– {item.name}</p>
+
+              {item.reply && (
+                <div className="mt-4 rounded-lg bg-pink-50 p-4">
+                  <p className="text-sm font-semibold text-rose mb-1">
+                    Svar fra Marit
+                  </p>
+                  <p>{item.reply}</p>
+                </div>
+              )}
+            </article>
+          ))}
+        </div>
+
+        <section className="max-w-2xl mx-auto mt-12">
           <form
             onSubmit={handleSubmit}
             className="bg-white rounded-2xl shadow-lg p-8 space-y-4"
@@ -90,10 +160,17 @@ export default function Kundeomtaler() {
 
             <button
               type="submit"
-              className="bg-rose text-white px-6 py-3 rounded-lg"
+              disabled={sending}
+              className="bg-rose text-white px-6 py-3 rounded-lg disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Send hilsen
+              {sending ? "Sender..." : "Send hilsen"}
             </button>
+
+            {statusMessage && (
+              <div className="rounded-xl bg-pink-50 border border-rose/20 px-4 py-3 text-sm text-coal">
+                {statusMessage}
+              </div>
+            )}
           </form>
         </section>
       </div>

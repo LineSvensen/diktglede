@@ -102,7 +102,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center space-x-2">
               <Phone className="w-4 h-4 text-[#d63772]" />
-              <span>+47 96 69 16 67</span>
+              <span>+47 97 69 16 67</span>
             </li>
           </ul>
         </div>

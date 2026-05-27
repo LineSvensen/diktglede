@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="bg-palepink text-black border-t border-pink-100  poppins-regular">
       <div className="max-w-7xl mx-auto px-6 py-12 grid gap-8 md:grid-cols-3">
         {/* --- Column 1: Logo + intro --- */}
-        <div>
+        <div className="lg:max-w-80">
           <h2 className="text-2xl font-semibold text-[#d63772] mb-3">
             Diktglede
           </h2>
@@ -18,8 +18,8 @@ export default function Footer() {
         </div>
 
         {/* --- Column 2: Quick links --- */}
-        <div>
-          <h3 className="text-lg font-medium text-[#d63772] mb-3">Utforsk</h3>
+        <div className="lg:ml-8">
+          <h3 className="text-lg font-medium  text-[#d63772] mb-3">Utforsk</h3>
           <ul className="space-y-2 text-sm">
             <li>
               <Link to="/" className="hover:text-[#ae295a] transition-colors">
@@ -109,7 +109,7 @@ export default function Footer() {
       </div>
 
       {/* --- Bottom bar --- */}
-      <div className="flex justify-evenly  items-center flex-col gap-4 border-t border-palepink mt-8 py-4 text-center text-xs text-black/80">
+      <div className="flex justify-evenly  items-center flex-col gap-4 border-t border-palepink mt-6 py-4 text-center text-xs text-black/80">
         <p className="flex flex-col sm:flex-row items-center gap-2 justify-center">
           <img src={koderaLogo} alt="Kodera" className="h-6" />
           Denne nettsiden er utviklet med ❤️ av kvinner i Kodera

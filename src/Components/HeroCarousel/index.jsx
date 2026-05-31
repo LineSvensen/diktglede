@@ -11,7 +11,7 @@ import rose from "../../assets/rose-d.png";
 
 export default function HeroCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ delay: 9000, stopOnInteraction: false }),
+    Autoplay({ delay: 20000, stopOnInteraction: false }),
   ]);
 
   const [canScrollPrev, setCanScrollPrev] = useState(false);

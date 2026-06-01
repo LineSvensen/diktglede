@@ -53,8 +53,17 @@ export default function Handmade() {
       </h1>
       <p className="text-center  text-black pb-8 lg:max-w-1/2">
         Håndlagde ting med dikt på - alt laget av Marit. Mange av tingene er
-        gjenbruk av treverk som har fått nye liv. Diktene er fra Marits bøker.
-        Kontakt Marit dersom du ønsker å bestille ❤️
+        gjenbruk av treverk som har fått nye liv. Kontakt Marit dersom du ønsker
+        å bestille ❤️ For mer utvalg - gå inn på Facebook-siden "Engler, hjerter
+        og sommerfugler"{" "}
+        <a
+          href="https://www.facebook.com/engleroghjerter"
+          target="_blank"
+          rel="noreferrer"
+          className="text-rose poppins-bold"
+        >
+          HER
+        </a>
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl items-start">

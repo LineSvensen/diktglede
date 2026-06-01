@@ -109,7 +109,7 @@ export default function Kundeomtaler() {
         </p>
 
         <section className="mb-4">
-          <ReviewCarousel reviews={reviews} autoPlayInterval={5000} />
+          <ReviewCarousel reviews={reviews} autoPlayInterval={20000} />
         </section>
         <div className="flex flex-col justify-center max-w-5xl pl-2 pr-2 pt-4">
           <h2 className="text-3xl text-rose poppins-regular  ">Nye hilsener</h2>

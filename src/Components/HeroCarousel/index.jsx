@@ -4,8 +4,8 @@ import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import HeroSlide1 from "./HeroSlide1";
-import HeroSlide2 from "./HeroSlide2";
-import HeroSlide3 from "./HeroSlide3";
+import HeroSlide2 from "./HeroSlide3";
+import HeroSlide3 from "./HeroSlide2";
 
 import rose from "../../assets/rose-d.png";
 

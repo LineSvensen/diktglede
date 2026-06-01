@@ -249,13 +249,19 @@ const ReviewCarousel = ({
         {/* Auto-play kontroll - mindre på mobil */}
         <button
           onClick={toggleAutoPlay}
-          className="absolute bottom-2 sm:bottom-3 right-2 sm:right-3 cursor-pointer rounded-full bg-gray p-1 sm:p-1.5 md:p-2 transition hover:bg-gray-200 z-10"
+          className="absolute bottom-2 sm:bottom-3 right-2 sm:right-3 cursor-pointer poppins-regular text-xs text-black  pt-1 transition  z-10 flex flex-col justify-center items-center"
           aria-label={isAutoPlaying ? "Pause" : "Spill"}
         >
           {isAutoPlaying ? (
-            <Pause className="h-4 w-4 sm:h-3 sm:w-3 md:h-4 md:w-4 text-white" />
+            <>
+              <Pause className="h-8 w-8 md:h-10 md:w-10 text-white text-center p-2  transition bg-rose rounded-full  hover:bg-rosedark" />
+              <p>Pause</p>
+            </>
           ) : (
-            <Play className="h-4 w-4 sm:h-3 sm:w-3 md:h-4 md:w-4 text-white" />
+            <>
+              <Play className="h-8 w-8 md:h-10 md:w-10 text-white text-center p-2  transition bg-rose rounded-full  hover:bg-rosedark" />{" "}
+              <p>Fortsett</p>
+            </>
           )}
         </button>
       </div>

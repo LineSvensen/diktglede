@@ -99,8 +99,8 @@ export default function Kundeomtaler() {
   }
 
   return (
-    <div className="min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 py-8">
+    <div className="min-h-screen ">
+      <div className="max-w-7xl flex flex-col justify-center items-center mx-auto px-4 py-8">
         <h1 className="text-4xl text-rose font-bold mb-8 text-center">
           Gjestebok
         </h1>
@@ -111,10 +111,14 @@ export default function Kundeomtaler() {
         <section className="mb-4">
           <ReviewCarousel reviews={reviews} autoPlayInterval={20000} />
         </section>
-        <div className="flex flex-col justify-center max-w-5xl pl-2 pr-2 pt-4">
-          <h2 className="text-3xl text-rose poppins-regular  ">Nye hilsener</h2>
 
-          <div className="mt-8  shadow-lg    rounded-lg  space-y-4 poppins-regular text-black">
+        {/* guestbook starting  */}
+        <div className="flex flex-col items-center justify-center w-full pl-2 pr-2 pt-4">
+          <h2 className="text-3xl text-rose poppins-regular pt-8">
+            Nye hilsener
+          </h2>
+
+          <div className="mt-8  shadow-lg w-full max-w-4xl   rounded-lg  space-y-4 poppins-regular text-black">
             {guestbookMessages.map((item) => (
               <article
                 key={item._id}
@@ -146,7 +150,7 @@ export default function Kundeomtaler() {
             ))}
           </div>
 
-          <section className=" max-w-2xl mt-4  shadow-lg border border-black/10 rounded-lg  ">
+          <section className="w-full max-w-4xl  mt-4  shadow-lg border border-black/10 rounded-lg  ">
             <form
               onSubmit={handleSubmit}
               className="bg-white rounded-2xl  p-8 space-y-4"

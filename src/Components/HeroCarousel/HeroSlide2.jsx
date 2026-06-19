@@ -10,7 +10,7 @@ export default function HeroSlide2() {
       style={{ backgroundImage: `url(${blueDots})` }}
     >
       {/* overlay */}
-      <div className="absolute inset-0  bg-linear-to-b from-white/99  to-white/10 sm:bg-linear-to-r sm:from-white/99  sm:to-white/10"></div>
+      <div className="absolute inset-0 bg-linear-to-t  sm:bg-linear-to-b from-white/99  to-white/10 sm:bg-linear-to-r sm:from-white/99  sm:to-white/10"></div>
 
       <div className="relative z-10 flex justify-center lg:justify-end items-center ">
         <img

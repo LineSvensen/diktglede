@@ -237,7 +237,7 @@ export default function EnkeltProdukt() {
                           Kontakt og bestill nå
                         </Link>
                         <p className="text-xl sm:text-2xl font-medium text-black pl-4  ">
-                          {book.price},- kr
+                          {book.price} kr
                         </p>
                       </>
                     )}

@@ -23,7 +23,7 @@ export default function HeroSlide1() {
   min-[1024px]:items-start  justify-start lg:min-h-[520px] lg:max-w-120 pt-0 sm:pt-8 md:pt-0  lg:pt-30 xl:pt-40"
         >
           <div
-            className="text-center  sm:text-left space-y-2 sm:space-y-8 lg:space-y-4 sm:pl-10  min-[455px]:w-70 min-[640px]:w-60    min-[768px]:w-84
+            className="text-center  sm:text-left space-y-2 sm:space-y-7 lg:space-y-4 sm:pl-10  min-[455px]:w-70 min-[640px]:w-60    min-[768px]:w-84
   min-[1149px]:w-full"
           >
             {/* Mobile image */}

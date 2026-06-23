@@ -3,7 +3,6 @@ import Loader from "../../Components/Loader/loader";
 import fbgruppe from "../../assets/maritfb2.png";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
-
 export default function Kontakt() {
   const [loading, setLoading] = useState(true);
 
@@ -108,7 +107,7 @@ export default function Kontakt() {
           <img
             src={fbgruppe}
             alt="Facebook-gruppen til Marit"
-            className="rounded-lg w-full max-h-40 object-cover mask-t-from-50% shadow-sm"
+            className="rounded-lg w-full max-h-70 object-cover mask-t-from-50% shadow-sm"
           />
         </div>
       </div>

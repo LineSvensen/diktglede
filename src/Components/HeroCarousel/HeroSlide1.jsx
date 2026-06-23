@@ -10,7 +10,7 @@ export default function HeroSlide1() {
         relative w-full overflow-hidden 
         bg-cover bg-center bg-no-repeat
         min-h-[560px] lg:min-h-[640px]
-        pt-8 lg:pt-0
+        pt-4 lg:pt-0
       "
       style={{ backgroundImage: `url(${bgHero})` }}
     >
@@ -27,18 +27,18 @@ export default function HeroSlide1() {
   min-[1149px]:w-full"
           >
             {/* Mobile image */}
-            <div className="relative z-10 flex w-full  justify-center sm:hidden">
+            <div className="relative z-10 flex w-full sm:pt-4 justify-center sm:hidden">
               <img
                 src={heroMobile}
                 alt="Diktglede hero"
                 className=" pt-0  max-h-[240px]   sm:max-h-[300px] object-cover"
               />
             </div>
-            <h1 className="text-3xl max-w-[230px] mx-auto sm:mx-0 sm:max-w-7xl homemade-apple-regular md:text-5xl font-bold text-gray-800 leading-tight">
+            <h1 className="text-5xl  sm:pt-2 lg:pt-0 max-w-[230px] mx-auto sm:mx-0 sm:max-w-7xl butterfly md:text-7xl font-bold text-gray-800 leading-tight">
               Velkommen til Diktglede
             </h1>
 
-            <p className="text-gray-700 manrope-write sm:pt-4 lg:pt-8 poppins-regular text-base lg:text-lg md:pr-12 lg:pr-0 max-w-sm mx-auto lg:mx-0">
+            <p className="text-gray-700 manrope-write   poppins-regular text-base lg:text-lg md:pr-12 lg:pr-0 max-w-sm mx-auto lg:mx-0">
               Utforsk Marits diktbøker – fylt med varme, kjærlighet og
               inspirasjon.
             </p>

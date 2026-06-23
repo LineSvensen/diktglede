@@ -66,6 +66,12 @@ body {
   color: white;
 }
 
+.butterfly {
+  font-family: "Butterfly Kids", cursive;
+  font-weight: 500;
+  font-style: normal;
+}
+
 .homemade-apple-regular {
   font-family: "Homemade Apple", cursive;
   font-weight: 600;

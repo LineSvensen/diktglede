@@ -23,7 +23,7 @@ export default function HeroSlide1() {
   min-[1024px]:items-start  justify-start lg:min-h-[520px] lg:max-w-120 pt-0 sm:pt-8 md:pt-0  lg:pt-30 xl:pt-40"
         >
           <div
-            className="text-center  sm:text-left space-y-4 sm:pl-10  min-[455px]:w-70 min-[640px]:w-60    min-[768px]:w-84
+            className="text-center  sm:text-left space-y-2 sm:pl-10  min-[455px]:w-70 min-[640px]:w-60    min-[768px]:w-84
   min-[1149px]:w-full"
           >
             {/* Mobile image */}
@@ -34,7 +34,7 @@ export default function HeroSlide1() {
                 className=" pt-0  max-h-[240px]   sm:max-h-[300px] object-cover"
               />
             </div>
-            <h1 className="text-5xl  sm:pt-2 lg:pt-0 max-w-[230px] mx-auto sm:mx-0 sm:max-w-7xl butterfly md:text-7xl font-bold text-gray-800 leading-tight">
+            <h1 className="text-5xl  lg:pt-0 max-w-[230px] mx-auto sm:mx-0 sm:max-w-7xl butterfly md:text-7xl font-bold text-gray-800 leading-tight">
               Velkommen til Diktglede
             </h1>
 
